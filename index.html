@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Path of Abhidhamma | Citta Visualization & Dhamma Analysis</title>
+  
+  <!-- ✅ Primary SEO Meta -->
+  <meta name="description" content="Explore the Path of Abhidhamma — an interactive visualization of Citta Vīthi, Chaitasika, Dhyāna stages, and the dynamic process of consciousness in Theravāda Abhidhamma. Created by Ishan Oshada." />
+  <meta name="keywords" content="Abhidhamma, Citta Vithi, Chaitasika, Dhamma, Buddhist Psychology, Theravada Buddhism, Abhidhamma Visualization, Mind Process, Mental Factors, Consciousness Flow, Buddhist Philosophy, Jhana, Vipassana, Bhavana, Dhamma Analysis, Sankhara, Vedana, Sanna, Sankhara, Vinnana, Paticcasamuppada, Sri Lanka Buddhism, Ishan Oshada, Abhidhamma Visualizer, The Path of Abhidhamma, Citta Simulation, Mind Stream, Citta Moments, Cetasika Visualization, Buddhist Science, Theravāda Study Tool, Mind Map Buddhism, Digital Abhidhamma, Spiritual Visualization, Dhamma Learning, Jhana Visualization, Abhidhamma Interactive" />
+
+  <!-- ✅ Open Graph (Social Media) -->
+  <meta property="og:title" content="The Path of Abhidhamma | Interactive Visualization by Ishan Oshada" />
+  <meta property="og:description" content="Visualize Citta Vīthi, Jhana levels, and the dynamics of Abhidhamma with an interactive Dhamma learning tool." />
+  <meta property="og:image" content="https://ishanoshada.com/assets/abhidhamma-banner.png" />
+  <meta property="og:url" content="https://abhidhamma.ishanoshada.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="The Path of Abhidhamma" />
+
+  <!-- ✅ Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Path of Abhidhamma | Interactive Citta Visualization" />
+  <meta name="twitter:description" content="A modern visualization of Abhidhamma mind processes and Buddhist psychology by Ishan Oshada." />
+  <meta name="twitter:image" content="https://ishanoshada.com/assets/abhidhamma-banner.png" />
+  <meta name="twitter:creator" content="@IshanOshada" />
+
+  <!-- ✅ Author and Verification -->
+  <meta name="author" content="Ishan Oshada" />
+  <meta name="google-site-verification" content="qkdfGKATv7ojMfaNd-kQRty71IqNjMSrXM2HO-FPdB8" />
+
+  <!-- ✅ Canonical Link -->
+  <link rel="canonical" href="https://abhidhamma.ishanoshada.com/" />
+
+  <!-- ✅ Tailwind & Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans:wght@400;700&family=Noto+Sans+Sinhala:wght@400;700&family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- ✅ Tailwind Theme Extension -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans', 'Noto Sans Sinhala', 'Noto Sans Tamil', 'sans-serif'],
+          },
+          colors: {
+            'kusala': '#3b82f6',
+            'akusala': '#ef4444',
+            'vipaka': '#eab308',
+            'kiriya': '#6b7280',
+            'jhana': '#a855f7',
+            'somanassa': '#22c55e',
+            'domanassa': '#f97316',
+            'upekkha': '#d1d5db',
+          },
+          keyframes: {
+            glow: {
+              '0%, 100%': { boxShadow: '0 0 5px rgba(255, 255, 255, 0.2)' },
+              '50%': { boxShadow: '0 0 20px rgba(255, 255, 255, 0.5)' },
+            },
+            'citta-arise': {
+              'from': { opacity: '0', transform: 'scale(0.7)' },
+              'to': { opacity: '1', transform: 'scale(1)' },
+            },
+            'path-flow': {
+              'to': { strokeDashoffset: -1000 },
+            }
+          },
+          animation: {
+            glow: 'glow 2s ease-in-out infinite',
+            'citta-arise': 'citta-arise 0.3s ease-out forwards',
+            'path-flow': 'path-flow 60s linear infinite',
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- ✅ React Import Map -->
+  <script type="importmap">
+  {
+    "imports": {
+      "react": "https://aistudiocdn.com/react@^19.2.0",
+      "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+      "react/": "https://aistudiocdn.com/react@^19.2.0/",
+      "recharts": "https://aistudiocdn.com/recharts@^3.2.1/es6/index.js"
+    }
+  }
+  </script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-slate-900 text-slate-200">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
