@@ -42,7 +42,7 @@ const REALMS_DATA = [
 const DETAILED_EXPLANATION: Record<Language, string> = {
     si: `
         <p class="mb-4">බුදුදහමට අනුව, පුනර්භවය යනු එක් භවයකින් තවත් භවයකට ආත්මයක් ගමන් කිරීමක් නොවේ. එය හේතු-ඵල දහම මත පදනම් වූ අඛණ්ඩ ක්‍රියාවලියකි. මරණාසන්න චිත්ත වීථිය (Maranasanna Vīthi) මීළඟ භවය සඳහා හේතුව (කර්මය) සකස් කරයි. එම චුති චිත්තය නිරුද්ධ වූ සැණින්, කිසිදු අතරමැදි කාලයකින් තොරව, නව භවයේ පළමු චිත්තය වන පටිසන්ධි චිත්තය (Paṭisandhi-citta) හටගනී.</p>
-        <p class="mb-4">මෙම පටිසන්ධි චිත්තය, පෙර භවයේ අවසාන ජවන් සිත්වල ස්වභාවය (කුසල් හෝ අකුසල්) මත රඳා පවතී. සුගතිගාමී කර්මයක් මරණාසන්නයේදී සිහිපත් වුවහොත්, මනුෂ්‍ය හෝ දේව වැනි සුගති භවයක පටිසandha ලබයි. දුගතිගාමී කර්මයක් සිහිපත් වුවහොත්, තිරිසන්, ප්‍රේත, අසුර හෝ නිරය වැනි දුගති භවයක උත්පත්තිය ලබයි. මෙම ක්‍රියාවලිය සම්පූර්ණයෙන්ම පුද්ගල භාවයෙන් තොර, ස්වභාවික ධර්මතාවයකි.</p>
+        <p class="mb-4">මෙම පටිසන්ධි චිත්තය, පෙර භවයේ අවසාන ජවන් සිත්වල ස්වභාවය (කුසල් හෝ අකුසල්) මත රඳා පවතී. සුගතිගාමී කර්මයක් මරණාසන්නයේදී සිහිපත් වුවහොත්, මනුෂ්‍ය හෝ දේව වැනි සුගති භවයක පටිසන්ධිය ලබයි. දුගතිගාමී කර්මයක් සිහිපත් වුවහොත්, තිරිසන්, ප්‍රේත, අසුර හෝ නිරය වැනි දුගති භවයක උත්පත්තිය ලබයි. මෙම ක්‍රියාවලිය සම්පූර්ණයෙන්ම පුද්ගල භාවයෙන් තොර, ස්වභාවික ධර්මතාවයකි.</p>
     `,
     en: `
         <p class="mb-4">According to Buddhism, rebirth is not the transmigration of a soul from one life to another. It is a continuous process based on cause and effect. The dying mind-process (Maranasanna Vīthi) creates the cause (kamma) for the next life. As soon as the death-consciousness (Cuti-citta) ceases, without any intermediate period, the first consciousness of the new life, the rebirth-linking consciousness (Paṭisandhi-citta), arises.</p>

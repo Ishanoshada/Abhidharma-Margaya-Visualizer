@@ -27,7 +27,6 @@ const initialStory: Record<Language, string> = {
     hi: 'अवशोषण और ज्ञानोदय के मार्ग की कल्पना करने के लिए एक परिदृश्य चुनें।',
 };
 
-// FIX: Added 'ta' and 'hi' properties to conform to Record<Language, string> type.
 const FETTERS = [
   { id: 'sakkaya-ditthi', name: { si: 'සක්කාය දිට්ඨි', en: 'Self-illusion', ta: 'Self-illusion', hi: 'Self-illusion' } },
   { id: 'vicikiccha', name: { si: 'විචිකිච්ඡා', en: 'Doubt', ta: 'Doubt', hi: 'Doubt' } },
@@ -44,10 +43,10 @@ const FETTERS = [
 type PathId = 'sotapatti' | 'sakadagami' | 'anagami' | 'arahatta';
 
 const PATHS: { id: PathId, name: Record<Language, string>, citta: string, eradicates: string[], weakens: string[] }[] = [
-  { id: 'sotapatti', name: { si: 'සෝතාපත්ති', en: 'Stream-Entry' }, citta: 'Sotāpatti-magga', eradicates: ['sakkaya-ditthi', 'vicikiccha', 'silabbata'], weakens: [] },
-  { id: 'sakadagami', name: { si: 'සකදාගාමී', en: 'Once-Return' }, citta: 'Sakadāgāmi-magga', eradicates: [], weakens: ['kama-raga', 'vyapada'] },
-  { id: 'anagami', name: { si: 'අනාගාමී', en: 'Non-Return' }, citta: 'Anāgāmi-magga', eradicates: ['kama-raga', 'vyapada'], weakens: [] },
-  { id: 'arahatta', name: { si: 'අරහත්', en: 'Arahantship' }, citta: 'Arahatta-magga', eradicates: ['rupa-raga', 'arupa-raga', 'mana', 'uddhacca', 'avijja'], weakens: [] },
+  { id: 'sotapatti', name: { si: 'සෝතාපත්ති', en: 'Stream-Entry', ta: 'சோதாபத்தி', hi: 'स्रोतापत्ति' }, citta: 'Sotāpatti-magga', eradicates: ['sakkaya-ditthi', 'vicikiccha', 'silabbata'], weakens: [] },
+  { id: 'sakadagami', name: { si: 'සකදාගාමී', en: 'Once-Return', ta: 'சகதாகாமி', hi: 'सकदागामी' }, citta: 'Sakadāgāmi-magga', eradicates: [], weakens: ['kama-raga', 'vyapada'] },
+  { id: 'anagami', name: { si: 'අනාගාමී', en: 'Non-Return', ta: 'அனாகாமி', hi: 'अनागामी' }, citta: 'Anāgāmi-magga', eradicates: ['kama-raga', 'vyapada'], weakens: [] },
+  { id: 'arahatta', name: { si: 'අරහත්', en: 'Arahantship', ta: 'அரஹந்த்', hi: 'अर्हन्त' }, citta: 'Arahatta-magga', eradicates: ['rupa-raga', 'arupa-raga', 'mana', 'uddhacca', 'avijja'], weakens: [] },
 ];
 
 const initialNibbanaStory: Record<Language, string> = {
@@ -102,14 +101,12 @@ export const Arpana: React.FC = () => {
         const animateNext = () => {
             if (currentIndex < fettersToAnimate.length) {
                 if (currentIndex === -1) {
-                    // FIX: Added 'ta' and 'hi' properties to conform to Record<Language, string> type.
                     setNibbanaStory({en: `The ${pathData.citta} consciousness arises, targeting the defilements...`, si: `${pathData.citta} චිත්තය පහළ වී, කෙලෙස් ප්‍රහාණය කිරීම අරඹයි...`, ta: `The ${pathData.citta} consciousness arises, targeting the defilements...`, hi: `The ${pathData.citta} consciousness arises, targeting the defilements...`});
                     setActiveFetter(pathData.citta);
                 } else {
                     const fetterId = fettersToAnimate[currentIndex];
                     const fetter = FETTERS.find(f => f.id === fetterId)!;
                     const isWeakened = pathData.weakens.includes(fetterId);
-                    // FIX: Added 'ta' and 'hi' properties to conform to Record<Language, string> type.
                     setNibbanaStory({en: `${isWeakened ? 'Weakening' : 'Eradicating'} the fetter of ${fetter.name.en}...`, si: `${getTranslation(fetter.name)} නම් සංයෝජනය ${isWeakened ? 'දුර්වල' : 'ප්‍රහාණය'} කරමින්...`, ta: `${isWeakened ? 'Weakening' : 'Eradicating'} the fetter of ${fetter.name.en}...`, hi: `${isWeakened ? 'Weakening' : 'Eradicating'} the fetter of ${fetter.name.en}...`});
                     setActiveFetter(fetterId);
                 }
@@ -131,7 +128,6 @@ export const Arpana: React.FC = () => {
                 // Animation finished
                 setIsNibbanaPlaying(false);
                 setActiveFetter(null);
-                 // FIX: Added 'ta' and 'hi' properties to conform to Record<Language, string> type.
                  setNibbanaStory({en: 'The path is complete. The corresponding fetters have been dealt with.', si: 'මාර්ගය සම්පූර්ණයි. අදාළ සංයෝජන ධර්මයන් ප්‍රහාණය කරන ලදී.', ta: 'The path is complete. The corresponding fetters have been dealt with.', hi: 'The path is complete. The corresponding fetters have been dealt with.'});
             }
         };
@@ -146,7 +142,6 @@ export const Arpana: React.FC = () => {
         setSelectedPath(pathId);
         const path = PATHS.find(p => p.id === pathId);
         if (path) {
-            // FIX: Added 'ta' and 'hi' properties to conform to Record<Language, string> type.
             const story = {
                 en: `This path ${path.eradicates.length > 0 ? `eradicates ${path.eradicates.length} fetter(s)` : ''}${path.eradicates.length > 0 && path.weakens.length > 0 ? ' and ' : ''}${path.weakens.length > 0 ? `weakens ${path.weakens.length} fetter(s)` : ''}. Press play.`,
                 si: `මෙම මාර්ගයෙන් සංයෝජන ${path.eradicates.length}ක් ප්‍රහාණය කරන අතර, සංයෝජන ${path.weakens.length}ක් දුර්වල කරයි. Play බොත්තම ඔබන්න.`,
