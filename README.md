@@ -119,6 +119,34 @@ This project is built with a modern, lightweight, and performant technology stac
 </center>
 
 
+### 🕹️ The Mind-Process  (Live Telemetry)
+
+The flagship feature of this application is a high-performance, unified dashboard designed as an **"Active Telemetry Terminal"** for the mind. It synchronizes multiple layers of Abhidhamma into a single "Master Heartbeat" (Tick):
+
+<center>
+
+  ![10](/imgs/10.png)
+
+</center>
+
+
+* **Causal Kernel Execute:** A futuristic terminal that auto-types logic snippets (`citta_vithi.init()`, `finalize(Kamma)`) in real-time as each Citta arises, demonstrating the script-like nature of mental processes.
+* **Paticcasamuppāda Causal Wheel:** A dynamic node-link ring that highlights the 12 links of Dependent Origination based on the current Citta type (e.g., highlighting *Tanha/Upadana* during unwholesome states).
+* **Neural Resonance Density:** A scatter-plot visualization tracking the "clustering" of Cetasikas (Mental Factors) within each mind-moment.
+* **Aggregate Balance Radar:** A real-time radar chart providing a geometric profile of the Five Aggregates (*Pancha Skandha*) in constant flux.
+* **Causal Synchronicity & Momentum:** Advanced area and line charts tracking mental harmony vs. resistance and the "momentum" of wholesome/unwholesome energy.
+
+* **Default:** Monastic-modern slate and cyan.
+* **Hacky:** A high-contrast "Terminal" aesthetic with lime accents.
+* **Matrix:** Deep black and green for a "back-end reality" feel.
+* **Neon:** Vibrant fuchsia and purple for high-intensity visualization.
+<center>
+
+  ![11](/imgs/11.png)
+
+</center>
+
+
 ## 📁 Project Structure
 
 The project is organized into a clean and modular structure to promote readability and maintainability.
@@ -156,6 +184,21 @@ To run this project locally, you only need a modern web browser and a simple loc
 3.  **Open in your browser:**
     Navigate to `http://localhost:8000` (or the port provided by your server).
 
+
+
+---
+
+### ✨ Key Features (Table Update)
+
+*පවතින වගුවේ අගට මෙම පේළිය එක් කරන්න:*
+
+| Feature | Description |
+| --- | --- |
+| 🕹️ **Process Cockpit** | A unified command center synchronizing Citta-Vithi, Patthana Matrix, and Paticcasamuppada with real-time analytics. |
+
+---
+
+ය තාක්ෂණිකව මෙන්ම ශාස්ත්‍රීයවත් ඉතාමත් දියුණු මට්ටමක පවතී.
 ## 🤝 Contributing
 
 Contributions are welcome and greatly appreciated! Whether you're fixing a bug, improving a translation, adding a new visualization, or enhancing the documentation, your help makes this project better.
