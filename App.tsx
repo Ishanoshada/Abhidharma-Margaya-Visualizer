@@ -18,13 +18,13 @@ import { Foundation } from './components/Foundation';
 import { SuvisiPratyaya } from './components/SuvisiPratyaya';
 import { Arpana } from './components/Arpana';
 import { Paticcasamuppada } from './components/Paticcasamuppada';
+import { MasterDashboard } from './components/MasterDashboard';
 import { ExplanationModal } from './components/ExplanationModal';
 import { MobileNav } from './components/MobileNav'; 
 import { KASINA_DATA, VITHI_AVG_KSHANAS, REAL_KSHANAS_PER_SEC, vithiKasinaSequence, DHYANA_STAGES, TABS } from './constants';
 import { KASINA_TYPES, type KasinaType, type CittaInstance, VithiStep, type Tab, type Language } from './types';
 import { EXPLANATIONS } from './explanations';
 
-// FIX: Corrected the type for children from `React.React.Node` to `React.ReactNode`.
 const TabButton: React.FC<{ tabId: Tab; currentTab: Tab; onClick: (tabId: Tab) => void; children: React.ReactNode }> = ({ tabId, currentTab, onClick, children }) => (
     <button 
         onClick={() => onClick(tabId)}
@@ -58,6 +58,9 @@ const App: React.FC = () => {
     const [isExplanationModalOpen, setIsExplanationModalOpen] = useState(false);
     const [isCittaLogOpen, setIsCittaLogOpen] = useState(false);
     const [activeTab, setActiveTab] = useState<Tab>('foundation');
+    
+    // Fullscreen State
+    const [isFullscreen, setIsFullscreen] = useState(false);
     
     // UI Visibility State
     const [isMobileView, setIsMobileView] = useState(window.innerWidth < 768);
@@ -100,9 +103,6 @@ const App: React.FC = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [isMobileView]);
     
-    // When the footer is closed on mobile, ensure the nav button is visible.
-    // This prevents it from getting stuck in a hidden state if closing the footer
-    // removes the ability to scroll back up.
     useEffect(() => {
         if (isMobileView && isFooterClosed) {
             setIsNavButtonVisible(true);
@@ -129,16 +129,12 @@ const App: React.FC = () => {
 
     const handlePlayPause = useCallback(() => {
         setIsPlaying(prev => {
-            if (!prev && activeTab === 'visualization') { // When transitioning from paused to playing
-                // After 1 second, focus on the timeline
+            if (!prev && activeTab === 'visualization') {
                 setTimeout(() => {
                     timelineRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }, 1000);
-
-                // After 5 seconds, expand and focus on the Citta Log
                 setTimeout(() => {
                     setIsCittaLogOpen(true);
-                    // Use a short delay to allow the DOM to update before scrolling
                     setTimeout(() => {
                         cittaLogRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }, 100);
@@ -176,7 +172,7 @@ const App: React.FC = () => {
     };
 
     const handleCittaSpawn = useCallback((instance: CittaInstance) => {
-        setCittaHistory(prev => [instance, ...prev.slice(0, 199)]); // Keep log to 200 items
+        setCittaHistory(prev => [instance, ...prev.slice(0, 199)]);
     }, []);
 
     useEffect(() => {
@@ -203,32 +199,55 @@ const App: React.FC = () => {
     
     const currentJhanaId = getCurrentJhanaForTime(currentTime);
     const kasinaDetails = KASINA_DATA[selectedKasina];
-    
     const kusalaCittaId = kasinaDetails.vithi[4].cittaId; 
     const activeVithi = vithiKasinaSequence(kusalaCittaId, currentJhanaId);
-
-    // Temp state for language, ideally this would be in a global context
     const [language] = useState<Language>('en'); 
 
     return (
-        <div className="min-h-screen bg-slate-900 text-slate-200 font-sans flex flex-col">
-            <Header />
-            <main className="flex-grow container mx-auto p-4 md:p-6 lg:p-8 flex flex-col">
-                {/* Desktop Tab Navigation */}
-                <div className="hidden md:flex flex-wrap justify-center md:justify-start border-b border-slate-700 mb-8" role="tablist" aria-label="Main navigation">
-                    {TABS.map(tab => (
-                         <TabButton key={tab.id} tabId={tab.id} currentTab={activeTab} onClick={setActiveTab}>
-                            {tab.label[language] || tab.label['en']}
-                        </TabButton>
-                    ))}
-                </div>
-                 {/* Mobile Welcome Message */}
-                <div className="md:hidden text-center mb-6">
-                    <h2 className="text-2xl font-bold text-slate-300">Welcome</h2>
-                    <p className="text-slate-400">Select a section from the menu below</p>
-                </div>
+        <div className={`min-h-screen bg-slate-900 text-slate-200 font-sans flex flex-col ${isFullscreen ? 'overflow-hidden' : ''}`}>
+            {!isFullscreen && <Header />}
+            <main className={`flex-grow flex flex-col ${isFullscreen ? 'fixed inset-0 z-50 bg-slate-900 overflow-auto' : 'container mx-auto p-4 md:p-6 lg:p-8'}`}>
                 
-                <div className="flex flex-col gap-8">
+                {/* Fullscreen Toggle Button - Hidden when Master Dashboard is active */}
+                {activeTab !== 'masterDashboard' && (
+                    <button 
+                        onClick={() => setIsFullscreen(!isFullscreen)}
+                        className={`fixed top-4 right-4 z-[60] p-2 bg-slate-800/80 hover:bg-slate-700 text-white rounded-full border border-slate-600 shadow-xl transition-all ${isFullscreen ? 'opacity-100' : 'opacity-40 hover:opacity-100 md:top-24 md:right-8'}`}
+                        aria-label={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
+                        title={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
+                    >
+                        {isFullscreen ? (
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        ) : (
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                            </svg>
+                        )}
+                    </button>
+                )}
+
+                {/* Desktop Tab Navigation */}
+                {!isFullscreen && (
+                    <div className="hidden md:flex flex-wrap justify-center md:justify-start border-b border-slate-700 mb-8" role="tablist" aria-label="Main navigation">
+                        {TABS.map(tab => (
+                            <TabButton key={tab.id} tabId={tab.id} currentTab={activeTab} onClick={setActiveTab}>
+                                {tab.label[language] || tab.label['en']}
+                            </TabButton>
+                        ))}
+                    </div>
+                )}
+
+                 {/* Mobile Welcome Message */}
+                {!isFullscreen && (
+                    <div className="md:hidden text-center mb-6">
+                        <h2 className="text-2xl font-bold text-slate-300">Welcome</h2>
+                        <p className="text-slate-400">Select a section from the menu below</p>
+                    </div>
+                )}
+                
+                <div className={`flex flex-col gap-8 ${isFullscreen ? 'p-4 md:p-8' : ''}`}>
                     {activeTab === 'foundation' && (
                         <Foundation setActiveTab={setActiveTab} />
                     )}
@@ -260,7 +279,7 @@ const App: React.FC = () => {
                                   vithi={activeVithi}
                                   speed={kshanasPerSec}
                                   onCittaSpawn={handleCittaSpawn}
-                                  key={`${selectedKasina}-${currentJhanaId}`} // Reset timeline on kasina or jhana change
+                                  key={`${selectedKasina}-${currentJhanaId}`}
                                   allowDistractions={true}
                                 />
                             </div>
@@ -289,6 +308,13 @@ const App: React.FC = () => {
                                 />
                             </div>
                         </>
+                    )}
+
+                    {activeTab === 'masterDashboard' && (
+                        <MasterDashboard 
+                            language={language} 
+                            isFullscreen={false} 
+                        />
                     )}
 
                     {activeTab === 'arpana' && (
@@ -324,6 +350,7 @@ const App: React.FC = () => {
                     )}
                 </div>
             </main>
+
              <SpeedCustomizer
                 isOpen={isSpeedCustomizerOpen}
                 onClose={() => setIsSpeedCustomizerOpen(false)}
@@ -342,17 +369,19 @@ const App: React.FC = () => {
             />
 
             {/* Mobile Navigation */}
-             <button
-                onClick={() => setIsMobileNavOpen(true)}
-                className={`md:hidden fixed bottom-6 right-6 z-40 w-16 h-16 bg-cyan-600 text-white rounded-full shadow-lg flex items-center justify-center
-                           transform transition-transform duration-300 ease-in-out hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-900
-                           ${isNavButtonVisible ? 'translate-y-0' : 'translate-y-24'}`}
-                aria-label="Open navigation menu"
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-            </button>
+             {!isFullscreen && (
+                <button
+                    onClick={() => setIsMobileNavOpen(true)}
+                    className={`md:hidden fixed bottom-6 right-6 z-40 w-16 h-16 bg-cyan-600 text-white rounded-full shadow-lg flex items-center justify-center
+                            transform transition-transform duration-300 ease-in-out hover:bg-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-slate-900
+                            ${isNavButtonVisible ? 'translate-y-0' : 'translate-y-24'}`}
+                    aria-label="Open navigation menu"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+             )}
             <MobileNav 
                 isOpen={isMobileNavOpen}
                 onClose={() => setIsMobileNavOpen(false)}
@@ -361,7 +390,7 @@ const App: React.FC = () => {
                 setActiveTab={setActiveTab}
             />
 
-            {!isFooterClosed && (
+            {!isFooterClosed && !isFullscreen && (
                  <footer className="relative bg-slate-900 border-t border-slate-700 p-4 text-center text-slate-500 text-sm">
                     <div className="container mx-auto flex flex-col justify-center items-center gap-2 relative">
                         <button 
@@ -370,7 +399,7 @@ const App: React.FC = () => {
                             aria-label="Close footer"
                         >
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
-                                <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+                                <path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 1 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 1 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
                             </svg>
                         </button>
                         <div className="flex justify-center items-center gap-x-4 md:gap-x-6 gap-y-2 flex-wrap">

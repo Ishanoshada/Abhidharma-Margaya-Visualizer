@@ -1,15 +1,17 @@
+
 import type { Cetasika, Citta, KasinaData, KasinaType, VithiStep, DreamScenario, Language, AbhinnaScenario, RebirthScenario, ArpanaScenario, Tab } from './types';
 
 export const TABS: { id: Tab; label: Record<Language, string> }[] = [
     { id: 'foundation', label: { en: 'Foundation (පදනම)', si: 'පදනම', ta: 'அடித்தளம்', hi: 'आधार' } },
     { id: 'visualization', label: { en: 'Citta Vīthi (චිත්ත වීථි)', si: 'චිත්ත වීථි', ta: 'சித்த வீதி', hi: 'चित्त वीथि' } },
+    { id: 'masterDashboard', label: { en: 'Master Dashboard (ප්‍රධාන පුවරුව)', si: 'ප්‍රධාන පුවරුව', ta: 'மாஸ்டர் டாஷ்போர்டு', hi: 'மாஸ்டர் डैशबोर्ड' } },
     { id: 'arpana', label: { en: 'Arpaṇa (අර්පණ)', si: 'අර්පණ', ta: 'அர்ப்பணம்', hi: 'अर्पण' } },
     { id: 'panchaskandha', label: { en: 'The Five Aggregates (පඤ්චස්කන්ධය)', si: 'පඤචස්කන්ධය', ta: 'பஞ்சஸ்கந்தம்', hi: 'पंचस्कंध' } },
     { id: 'paticcasamuppada', label: { en: 'Dependent Origination (පටිච්චසමුප්පාදය)', si: 'පටිච්චසමුප්පාදය', ta: 'சார்பு உற்பத்தி', hi: 'प्रतीत्यसमुत्पाद' } },
     { id: 'suvisiPratyaya', label: { en: '24 Conditions (සුවිසි ප්‍රත්‍යය)', si: 'සුවිසි ප්‍රත්‍යය', ta: '24 நிபந்தனைகள்', hi: '24 प्रत्यय' } },
     { id: 'dream', label: { en: 'Dream State (සිහින)', si: 'සිහින', ta: 'கனவு நிலை', hi: 'स्वप्न अवस्था' } },
-    { id: 'abhinna', label: { en: 'Abhiññā (අභිඤ්ඤා)', si: 'අභිඤ්ඤා', ta: 'அபிஞ்ஞா', hi: 'अभिज्ञा' } },
-    { id: 'maranasanna', label: { en: 'Dying Process (මරණාසන්න)', si: 'මරණාසන්න', ta: 'மரண செயல்முறை', hi: 'मरण प्रक्रिया' } },
+    { id: 'abhinna', label: { en: 'Abhiññā (අභිඤ්ඤා)', si: 'අභිඤ්ඤා', ta: 'அபிஞ்ஞா', hi: 'அபிজ্ঞা' } },
+    { id: 'maranasanna', label: { en: 'Dying Process (මරණාසන්න)', si: 'මරණාසන්න', ta: 'மரண செயல்முறை', hi: 'மरण प्रक्रिया' } },
     { id: 'punabbhava', label: { en: 'Rebirth (පුනරුත්පත්තිය)', si: 'පුනරුත්පත්තිය', ta: 'மறுபிறப்பு', hi: 'पुनर्जन्म' } },
 ];
 
@@ -19,11 +21,10 @@ export const REAL_KSHANAS_PER_SEC = 667 * 10 ** 12;  // 667 trillion cittas/ksha
 export const DHYANA_STAGES = [
     { time: 0, factors: { vitakka: 0, vicara: 0, piti: 0, sukha: 0, upekkha: 50, ekaggata: 10 } },
     { time: 5, factors: { vitakka: 80, vicara: 80, piti: 40, sukha: 40, upekkha: 0, ekaggata: 70 } },
-    { time: 10, factors: { vitakka: 100, vicara: 100, piti: 100, sukha: 100, upekkha: 0, ekaggata: 100 } },
-    { time: 15, factors: { vitakka: 0, vicara: 100, piti: 100, sukha: 100, upekkha: 0, ekaggata: 100 } },
-    { time: 25, factors: { vitakka: 0, vicara: 0, piti: 100, sukha: 100, upekkha: 0, ekaggata: 100 } },
-    { time: 35, factors: { vitakka: 0, vicara: 0, piti: 0, sukha: 100, upekkha: 0, ekaggata: 100 } },
-    { time: 45, factors: { vitakka: 0, vicara: 0, piti: 0, sukha: 0, upekkha: 100, ekaggata: 100 } },
+    { time: 15, factors: { vitakka: 100, vicara: 100, piti: 100, sukha: 100, upekkha: 0, ekaggata: 100 } },
+    { time: 25, factors: { vitakka: 0, vicara: 100, piti: 100, sukha: 100, upekkha: 0, ekaggata: 100 } },
+    { time: 35, factors: { vitakka: 0, vicara: 0, piti: 100, sukha: 100, upekkha: 0, ekaggata: 100 } },
+    { time: 45, factors: { vitakka: 0, vicara: 0, piti: 0, sukha: 100, upekkha: 0, ekaggata: 100 } },
 ];
 
 export const CETASIKAS: Record<string, Cetasika> = {
@@ -69,54 +70,61 @@ export const CETASIKAS: Record<string, Cetasika> = {
     pagunnata: { id: 'pagunnata', name: 'Proficiency', pali: 'Kāyapāguññatā/Cittapāguññatā' },
     ujukata: { id: 'ujukata', name: 'Rectitude', pali: 'Kāyujukatā/Cittujukatā' },
     panna: { id: 'panna', name: 'Wisdom', pali: 'Paññā' },
+    // Additional for Jhana
+    karuna: { id: 'karuna', name: 'Compassion', pali: 'Karuṇā' },
+    mudita: { id: 'mudita', name: 'Sympathetic Joy', pali: 'Muditā' },
 };
 
 const UNIVERSALS = ['phassa', 'vedana', 'sanna', 'cetana', 'ekaggata', 'jivitindriya', 'manasikara'];
 const PARTICULARS = ['vitakka', 'vicara', 'adhimokkha', 'viriya', 'piti', 'chanda'];
 const AKUSALA_UNIVERSALS = ['moha', 'ahirika', 'anottappa', 'uddhacca'];
 const SOBHANA_UNIVERSALS = ['saddha', 'sati', 'hiri', 'ottappa', 'alobha', 'adosa', 'tatramajjhattata', 'passaddhi', 'lahuta', 'muduta', 'kammannata', 'pagunnata', 'ujukata'];
+const APPAMANNA = ['karuna', 'mudita'];
 
 export const CITTAS: Record<string, Citta> = {
     bhavanga: { id: 'bhavanga', name: 'Life-Continuum', pali: 'Bhavanga', type: 'vipaka', vedana: 'upekkha', cetasikas: [...UNIVERSALS, ...PARTICULARS] },
-    manodvaravajjana: { id: 'manodvaravajjana', name: 'Mind-Door Adverting', pali: 'Manodvārāvajjana', type: 'kiriya', vedana: 'upekkha', cetasikas: [...UNIVERSALS, 'adhimokkha', 'viriya'] },
+    manodvaravajjana: { id: 'manodvaravajjana', name: 'Mind-Door Adverting', pali: 'Manodvārāvajjana', type: 'kiriya', vedana: 'upekkha', cetasikas: [...UNIVERSALS, 'vitakka', 'vicara', 'adhimokkha', 'viriya', 'chanda'] }, // 12
     
-    // Generic and Pathavi Kusala
-    kusala: { id: 'kusala', name: 'Wholesome Javana', pali: 'Kusala Javana', type: 'kusala', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, ...PARTICULARS, ...SOBHANA_UNIVERSALS, 'panna'] },
+    // Generic and Pathavi Kusala - 34 factors
+    kusala: { id: 'kusala', name: 'Wholesome Javana', pali: 'Kusala Javana', type: 'kusala', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, ...PARTICULARS, ...SOBHANA_UNIVERSALS, 'panna', ...APPAMANNA] },
     
-    // Kasina-specific Kusala Javanas
-    kusala_tejo: { id: 'kusala_tejo', name: 'Fire Kusala Javana', pali: 'Tejo-Kusala', type: 'kusala', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, ...PARTICULARS, ...SOBHANA_UNIVERSALS, 'panna'] },
-    kusala_apo: { id: 'kusala_apo', name: 'Water Kusala Javana', pali: 'Āpo-Kusala', type: 'kusala', vedana: 'upekkha', hasPanna: true, cetasikas: [...UNIVERSALS, ...PARTICULARS, ...SOBHANA_UNIVERSALS, 'panna'] },
-    kusala_vayo: { id: 'kusala_vayo', name: 'Wind Kusala Javana', pali: 'Vāyo-Kusala', type: 'kusala', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, ...PARTICULARS, ...SOBHANA_UNIVERSALS, 'panna'] },
+    // Preparatory Javanas for Arpana - 34 factors
+    parikamma: { id: 'parikamma', name: 'Preparation', pali: 'Parikamma', type: 'kusala', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, ...PARTICULARS, ...SOBHANA_UNIVERSALS, 'panna', ...APPAMANNA] },
+    upacara: { id: 'upacara', name: 'Access', pali: 'Upacāra', type: 'kusala', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, ...PARTICULARS, ...SOBHANA_UNIVERSALS, 'panna', ...APPAMANNA] },
+    anuloma: { id: 'anuloma', name: 'Adaptation', pali: 'Anuloma', type: 'kusala', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, ...PARTICULARS, ...SOBHANA_UNIVERSALS, 'panna', ...APPAMANNA] },
+    gotrabhu: { id: 'gotrabhu', name: 'Change-of-lineage', pali: 'Gotrabhū', type: 'kusala', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, ...PARTICULARS, ...SOBHANA_UNIVERSALS, 'panna', ...APPAMANNA] },
 
     // Jhanas
-    jhana1: { id: 'jhana1', name: 'First Dhyāna', pali: 'Paṭhamajjhāna', type: 'jhana', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, 'vitakka', 'vicara', 'piti', ...SOBHANA_UNIVERSALS, 'panna'] },
-    jhana2: { id: 'jhana2', name: 'Second Dhyāna', pali: 'Dutiyajjhāna', type: 'jhana', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, 'vicara', 'piti', ...SOBHANA_UNIVERSALS, 'panna'] },
-    jhana3: { id: 'jhana3', name: 'Third Dhyāna', pali: 'Tatiyajjhāna', type: 'jhana', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, 'piti', ...SOBHANA_UNIVERSALS, 'panna'] },
-    jhana4: { id: 'jhana4', name: 'Fourth Dhyāna', pali: 'Catutthajjhāna', type: 'jhana', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, ...SOBHANA_UNIVERSALS, 'panna'] },
-    jhana5: { id: 'jhana5', name: 'Fifth Dhyāna', pali: 'Pañcamajjhāna', type: 'jhana', vedana: 'upekkha', hasPanna: true, cetasikas: [...UNIVERSALS, ...SOBHANA_UNIVERSALS, 'panna'] },
+    jhana1: { id: 'jhana1', name: 'First Dhyāna', pali: 'Paṭhamajjhāna', type: 'jhana', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, 'vitakka', 'vicara', 'adhimokkha', 'viriya', 'piti', 'chanda', ...SOBHANA_UNIVERSALS, 'panna', ...APPAMANNA] }, // 34
+    jhana2: { id: 'jhana2', name: 'Second Dhyāna', pali: 'Dutiyajjhāna', type: 'jhana', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, 'vicara', 'adhimokkha', 'viriya', 'piti', 'chanda', ...SOBHANA_UNIVERSALS, 'panna', ...APPAMANNA] }, // 33
+    jhana3: { id: 'jhana3', name: 'Third Dhyāna', pali: 'Tatiyajjhāna', type: 'jhana', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, 'adhimokkha', 'viriya', 'piti', 'chanda', ...SOBHANA_UNIVERSALS, 'panna', ...APPAMANNA] }, // 32
+    jhana4: { id: 'jhana4', name: 'Fourth Dhyāna', pali: 'Catutthajjhāna', type: 'jhana', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, 'adhimokkha', 'viriya', 'chanda', ...SOBHANA_UNIVERSALS, 'panna', ...APPAMANNA] }, // 31
+    jhana5: { id: 'jhana5', name: 'Fifth Dhyāna', pali: 'Pañcamajjhāna', type: 'jhana', vedana: 'upekkha', hasPanna: true, cetasikas: [...UNIVERSALS, 'adhimokkha', 'viriya', 'chanda', ...SOBHANA_UNIVERSALS, 'panna', ...APPAMANNA] }, // 31
     
     // Distractions
     lobhaCitta: { id: 'lobhaCitta', name: 'Greed-rooted', pali: 'Lobha-mūla', type: 'akusala', vedana: 'somanassa', cetasikas: [...UNIVERSALS, ...PARTICULARS, ...AKUSALA_UNIVERSALS, 'lobha', 'ditthi'] },
     dosaCitta: { id: 'dosaCitta', name: 'Aversion-rooted', pali: 'Dosa-mūla', type: 'akusala', vedana: 'domanassa', cetasikas: [...UNIVERSALS, 'vitakka', 'vicara', 'adhimokkha', 'viriya', ...AKUSALA_UNIVERSALS, 'dosa', 'issa', 'macchariya', 'kukkucca'] },
 
     // Maranasanna Vithi Cittas
-    pancadvaravajjana: { id: 'pancadvaravajjana', name: 'Five-Door Adverting', pali: 'Pañcadvārāvajjana', type: 'kiriya', vedana: 'upekkha', cetasikas: [...UNIVERSALS, 'adhimokkha', 'viriya'] },
+    pancadvaravajjana: { id: 'pancadvaravajjana', name: 'Five-Door Adverting', pali: 'Pañcadvārāvajjana', type: 'kiriya', vedana: 'upekkha', cetasikas: [...UNIVERSALS, 'vitakka', 'vicara', 'adhimokkha', 'viriya'] },
     cakkhuvinnana: { id: 'cakkhuvinnana', name: 'Eye-Consciousness', pali: 'Cakkhu-viññāṇa', type: 'vipaka', vedana: 'upekkha', cetasikas: [...UNIVERSALS] },
+    sotavinnana: { id: 'sotavinnana', name: 'Ear-Consciousness', pali: 'Sota-viññāṇa', type: 'vipaka', vedana: 'upekkha', cetasikas: [...UNIVERSALS] },
     sampaticchana: { id: 'sampaticchana', name: 'Receiving', pali: 'Sampaṭicchana', type: 'vipaka', vedana: 'upekkha', cetasikas: [...UNIVERSALS] },
     santirana: { id: 'santirana', name: 'Investigating', pali: 'Santīraṇa', type: 'vipaka', vedana: 'upekkha', cetasikas: [...UNIVERSALS, 'adhimokkha'] },
-    votthapana: { id: 'votthapana', name: 'Determining', pali: 'Votthapana', type: 'kiriya', vedana: 'upekkha', cetasikas: [...UNIVERSALS, 'adhimokkha', 'viriya'] }, // Same as Manodvaravajjana in function
-    cuti: { id: 'cuti', name: 'Death Consciousness', pali: 'Cuti', type: 'vipaka', vedana: 'upekkha', cetasikas: [...UNIVERSALS, ...PARTICULARS] }, // Similar to Bhavanga
-    patisandhi: { id: 'patisandhi', name: 'Rebirth-linking', pali: 'Paṭisandhi', type: 'vipaka', vedana: 'upekkha', cetasikas: [...UNIVERSALS, ...PARTICULARS] }, // Similar to Bhavanga
+    votthapana: { id: 'votthapana', name: 'Determining', pali: 'Votthapana', type: 'kiriya', vedana: 'upekkha', cetasikas: [...UNIVERSALS, 'vitakka', 'vicara', 'adhimokkha', 'viriya'] },
+    tadarammana: { id: 'tadarammana', name: 'Registration', pali: 'Tadārammaṇa', type: 'vipaka', vedana: 'upekkha', cetasikas: [...UNIVERSALS, 'vitakka', 'vicara', 'adhimokkha', 'viriya'] },
+    cuti: { id: 'cuti', name: 'Death Consciousness', pali: 'Cuti', type: 'vipaka', vedana: 'upekkha', cetasikas: [...UNIVERSALS, ...PARTICULARS] },
+    patisandhi: { id: 'patisandhi', name: 'Rebirth-linking', pali: 'Paṭisandhi', type: 'vipaka', vedana: 'upekkha', cetasikas: [...UNIVERSALS, ...PARTICULARS] },
 
     // Arpana Vithi Cittas
-    sotapatti_magga: { id: 'sotapatti_magga', name: 'Stream-Entry Path', pali: 'Sotāpatti-magga', type: 'magga', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, 'vitakka', 'vicara', 'piti', ...SOBHANA_UNIVERSALS, 'panna'] },
-    sotapatti_phala: { id: 'sotapatti_phala', name: 'Stream-Entry Fruition', pali: 'Sotāpatti-phala', type: 'phala', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, 'vitakka', 'vicara', 'piti', ...SOBHANA_UNIVERSALS, 'panna'] },
-    sakadagami_magga: { id: 'sakadagami_magga', name: 'Once-Return Path', pali: 'Sakadāgāmi-magga', type: 'magga', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, 'vitakka', 'vicara', 'piti', ...SOBHANA_UNIVERSALS, 'panna'] },
-    sakadagami_phala: { id: 'sakadagami_phala', name: 'Once-Return Fruition', pali: 'Sakadāgāmi-phala', type: 'phala', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, 'vitakka', 'vicara', 'piti', ...SOBHANA_UNIVERSALS, 'panna'] },
-    anagami_magga: { id: 'anagami_magga', name: 'Non-Return Path', pali: 'Anāgāmi-magga', type: 'magga', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, 'vitakka', 'vicara', 'piti', ...SOBHANA_UNIVERSALS, 'panna'] },
-    anagami_phala: { id: 'anagami_phala', name: 'Non-Return Fruition', pali: 'Anāgāmi-phala', type: 'phala', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, 'vitakka', 'vicara', 'piti', ...SOBHANA_UNIVERSALS, 'panna'] },
-    arahatta_magga: { id: 'arahatta_magga', name: 'Arahantship Path', pali: 'Arahatta-magga', type: 'magga', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, 'vitakka', 'vicara', 'piti', ...SOBHANA_UNIVERSALS, 'panna'] },
-    arahatta_phala: { id: 'arahatta_phala', name: 'Arahantship Fruition', pali: 'Arahatta-phala', type: 'kiriya', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, 'vitakka', 'vicara', 'piti', ...SOBHANA_UNIVERSALS, 'panna'] },
+    sotapatti_magga: { id: 'sotapatti_magga', name: 'Stream-Entry Path', pali: 'Sotāpatti-magga', type: 'magga', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, ...PARTICULARS, ...SOBHANA_UNIVERSALS, 'panna'] },
+    sotapatti_phala: { id: 'sotapatti_phala', name: 'Stream-Entry Fruition', pali: 'Sotāpatti-phala', type: 'phala', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, ...PARTICULARS, ...SOBHANA_UNIVERSALS, 'panna'] },
+    sakadagami_magga: { id: 'sakadagami_magga', name: 'Once-Return Path', pali: 'Sakadāgāmi-magga', type: 'magga', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, ...PARTICULARS, ...SOBHANA_UNIVERSALS, 'panna'] },
+    sakadagami_phala: { id: 'sakadagami_phala', name: 'Once-Return Fruition', pali: 'Sakadāgāmi-phala', type: 'phala', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, ...PARTICULARS, ...SOBHANA_UNIVERSALS, 'panna'] },
+    anagami_magga: { id: 'anagami_magga', name: 'Non-Return Path', pali: 'Anāgāmi-magga', type: 'magga', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, ...PARTICULARS, ...SOBHANA_UNIVERSALS, 'panna'] },
+    anagami_phala: { id: 'anagami_phala', name: 'Non-Return Fruition', pali: 'Anāgāmi-phala', type: 'phala', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, ...PARTICULARS, ...SOBHANA_UNIVERSALS, 'panna'] },
+    arahatta_magga: { id: 'arahatta_magga', name: 'Arahantship Path', pali: 'Arahatta-magga', type: 'magga', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, ...PARTICULARS, ...SOBHANA_UNIVERSALS, 'panna'] },
+    arahatta_phala: { id: 'arahatta_phala', name: 'Arahantship Fruition', pali: 'Arahatta-phala', type: 'kiriya', vedana: 'somanassa', hasPanna: true, cetasikas: [...UNIVERSALS, ...PARTICULARS, ...SOBHANA_UNIVERSALS, 'panna'] },
 };
 
 export const vithiKasinaSequence: (kusalaCittaId: string, jhanaCittaId: string) => VithiStep[] = (kusalaCittaId, jhanaCittaId) => [
@@ -152,17 +160,17 @@ export const KASINA_DATA: Record<KasinaType, KasinaData> = {
     'Tejo (Fire)': {
         name: 'Tejo (Fire)',
         description: 'Meditation on the fire element, cultivating concentration through the concept of heat and energy.',
-        vithi: vithiKasinaSequence('kusala_tejo', 'jhana1'),
+        vithi: vithiKasinaSequence('kusala', 'jhana1'),
     },
     'Āpo (Water)': {
         name: 'Āpo (Water)',
         description: 'Meditation on the water element, cultivating concentration through the concept of cohesion.',
-        vithi: vithiKasinaSequence('kusala_apo', 'jhana1'),
+        vithi: vithiKasinaSequence('kusala', 'jhana1'),
     },
     'Vāyo (Wind)': {
         name: 'Vāyo (Wind)',
         description: 'Meditation on the wind element, cultivating concentration through the concept of motion.',
-        vithi: vithiKasinaSequence('kusala_vayo', 'jhana1'),
+        vithi: vithiKasinaSequence('kusala', 'jhana1'),
     },
 };
 
@@ -173,7 +181,7 @@ const PLEASANT_DREAM_VITHI: VithiStep[] = [
     { cittaId: 'manodvaravajjana', duration: 1, label: 'Manodvārāvajjana', story: { en: 'A vague memory-image begins to stir in the mind...', si: 'මනසෙහි නොපැහැදිලි මතක රූපයක් ඇවිස්සීමට පටන් ගනී...', ta: 'மனதில் ஒரு மங்கலான நினைவுப் பிம்பம் கிளரத் தொடங்குகிறது...', hi: 'मन में एक अस्पष्ट स्मृति-छवि उभरने लगती है...' } },
     { cittaId: 'lobhaCitta', duration: 1, label: 'Javana', story: { en: 'The image becomes clearer: a cherished person from the past.', si: 'රූපය පැහැදිලි වේ: අතීතයේ සිටි ආදරණීය පුද්ගලයෙකි.', ta: 'படம் தெளிவாகிறது: கடந்த காலத்தைச் சேர்ந்த ஒரு நேசத்துக்குரிய நபர்.', hi: 'छवि स्पष्ट हो जाती है: अतीत का एक प्रिय व्यक्ति।' } },
     { cittaId: 'lobhaCitta', duration: 1, label: 'Javana', story: { en: 'A feeling of joy and attachment arises with the sight.', si: 'එම දසුනත් සමග සතුට සහ ඇල්ම පිළිබඳ හැඟීමක් ඇතිවේ.', ta: 'அந்தக் காட்சியுடன் மகிழ்ச்சியும் பற்றும் எழுகின்றன.', hi: 'उस दृश्य के साथ खुशी और लगाव की भावना उत्पन्न होती है।' } },
-    { cittaId: 'lobhaCitta', duration: 1, label: 'Javana', story: { en: 'The mind clings to the pleasant feeling.', si: 'සිත එම සුන්දර හැඟීමට ඇලී සිටී.', ta: 'மனம் அந்த இனிமையான உணர்வில் ஒட்டிக்கொள்கிறது.', hi: 'मन उस सुखद অনুভূতি से चिपक जाता है।' } },
+    { cittaId: 'lobhaCitta', duration: 1, label: 'Javana', story: { en: 'The mind clings to the pleasant feeling.', si: 'සිත එම සුන්දර හැඟීමට ඇලී සිටී.', ta: 'மனம் அந்த இனிமையான உணர்வில் ஒட்டிக்கொள்கிறது.', hi: 'मन उस सुखद अनुभूति से चिपक जाता है।' } },
     { cittaId: 'lobhaCitta', duration: 1, label: 'Javana' },
     { cittaId: 'lobhaCitta', duration: 1, label: 'Javana', story: { en: 'You are together, sharing a happy moment.', si: 'ඔබ දෙදෙනා එකට, සතුටු මොහොතක් බෙදා ගනිමින් සිටී.', ta: 'நீங்கள் இருவரும் ஒன்றாக ஒரு மகிழ்ச்சியான தருணத்தைப் பகிர்ந்து கொள்கிறீர்கள்.', hi: 'आप एक साथ हैं, एक सुखद पल साझा कर रहे हैं।' } },
     { cittaId: 'lobhaCitta', duration: 1, label: 'Javana' },
@@ -256,10 +264,10 @@ export const ABHINNA_EXAMPLES: AbhinnaScenario[] = [
             { pali: 'Base Jhāna', cittaId: 'jhana4', story: { en: 'First, one must attain a base Jhāna. The mind focuses solely on the concept of sound.', si: 'පළමුව, ධ්‍යානයේ සමවැදීම අවශ්‍යයි. ශබ්ද සංකල්පය කෙරෙහි පමණක් සිත යොමු කරයි.', ta: 'முதலில், ஒருவர் அடிப்படை ஜானத்தை அடைய வேண்டும். மனம் ஒலி என்ற கருத்தில் மட்டுமே கவனம் செலுத்துகிறது.', hi: 'पहले, आधार झान प्राप्त करना होगा। मन केवल ध्वनि की अवधारणा पर ध्यान केंद्रित करता है।' } },
             { pali: 'Bhavaṅga-calana', cittaId: 'bhavanga', story: { en: 'The life-continuum vibrates as the mind prepares to direct itself towards a distant sound.', si: 'දුරස්ථ ශබ්දයක් වෙත සිත යොමු කිරීමට සූදානම් වන විට භවාංගය කම්පනය වේ.', ta: 'தொலைதூர ஒலியை நோக்கி தன்னை செலுத்த மனம் தயாராகும் போது வாழ்க்கை-தொடர்ச்சி அதிர்வுகிறது.', hi: 'मन जब दूर की ध्वनि की ओर खुद को निर्देशित करने की तैयारी करता है तो भवंग कांपता है।' } },
             { pali: 'Bhavaṅga-upaccheda', cittaId: 'bhavanga', story: { en: 'The life-continuum is cut, allowing the mind-door process for hearing the sound to begin.', si: 'ශබ්දය ඇසීම සඳහා වූ මනෝද්වාර වීථිය ආරම්භ වීමට ඉඩ සලසමින් භවාංගය සිඳී යයි.', ta: 'வாழ்க்கை-தொடர்ச்சி துண்டிக்கப்பட்டு, ஒலியைக் கேட்பதற்கான மன-வாசல் செயல்முறையைத் தொடங்க அனுமதிக்கிறது.', hi: 'भवंग कट जाता है, जिससे ध्वनि सुनने के लिए मन-द्वार प्रक्रिया शुरू हो जाती है।' } },
-            { pali: 'Parikamma', cittaId: 'kusala', story: { en: 'Preparation: The mind prepares to "listen" without the physical ear, extending its range.', si: 'පරිකර්ම: භෞතික කනකින් තොරව "සවන් දීමට" සිත සූදානම් වෙමින්, එහි පරාසය විහිදුවයි.', ta: 'தயாரிப்பு: மனம் భౌతిక చెవి లేకుండా "వినడానికి" సిద్ధమవుతుంది, దాని పరిధిని విస్తరిస్తుంది.', hi: 'परिकर्म: मन भौतिक कान के बिना "सुनने" की तैयारी करता है, अपनी सीमा का विस्तार करता है।' } },
+            { pali: 'Parikamma', cittaId: 'kusala', story: { en: 'Preparation: The mind prepares to "listen" without the physical ear, extending its range.', si: 'පරිකර්ම: භෞතික කනකින් තොරව "සවන් දීමට" සිත සූදානම් වෙමින්, එහි පරාසය විහිදුවයි.', ta: 'தயாரிப்பு: மனம் భౌతిక చెவி లేకుండా "వినడానికి" సిద్ధమవుతుంది, దాని పరిధిని విస్తரிస్తుంది.', hi: 'परिकर्म: मन भौतिक कान के बिना "सुनने" की तैयारी करता है, अपनी सीमा का विस्तार करता है।' } },
             { pali: 'Upacāra', cittaId: 'kusala', story: { en: 'Access: The mind nears the distant auditory object.', si: 'උපචාර: සිත දුරස්ථ ශ්‍රවණ අරමුණට ළඟා වේ.', ta: 'அணுகல்: மனம் தொலைதூர செவிவழிப் பொருளை நெருங்குகிறது.', hi: 'उपचार: मन दूर के श्रवण वस्तु के पास पहुँचता है।' } },
             { pali: 'Anuloma', cittaId: 'kusala', story: { en: 'Adaptation: The mind adapts to the nature of the distant sound.', si: 'අනුලෝම: සිත දුරස්ථ ශබ්දයේ ස්වභාවයට හැඩගැසේ.', ta: 'தழுவல்: மனம் தொலைதூர ஒலியின் தன்மைக்கு தன்னை மாற்றிக்கொள்கிறது.', hi: 'अनुलोम: मन दूर की ध्वनि की प्रकृति के अनुकूल हो जाता है।' } },
-            { pali: 'Gotrabhū', cittaId: 'kusala', story: { en: 'Change-of-lineage: The mind transcends normal hearing and grasps the supernormal sound.', si: 'ගෝත්‍රභූ: සිත සාමාන්‍ය ශ්‍රවණය ඉක්මවා ගොස් අසාමාන්‍ය ශබ්දය ග්‍රහණය කර ගනී.', ta: 'வம்சாவளி மாற்றம்: மனம் சாதாரண செவியுணர்வைக் கடந்து அசாதாரண ஒலியைப் గ్రహిస్తుంది.', hi: 'गोत्रभू: मन सामान्य श्रवण से परे जाकर अलौकिक ध्वनि को पकड़ता है।' } },
+            { pali: 'Gotrabhū', cittaId: 'kusala', story: { en: 'Change-of-lineage: The mind transcends normal hearing and grasps the supernormal sound.', si: 'ගෝත්‍රභූ: සිත සාමාන්‍ය ශ්‍රවණය ඉක්මවා ගොස් අසාමාන්‍ය ශබ්දය ග්‍රහණය කර ගනී.', ta: 'வம்சாவளி மாற்றம்: மனம் சாதாரண செவியுணர்வைக் கடந்து அசாதாரண ஒலியைப் கிரகிக்கிறது.', hi: 'गोत्रभू: मन सामान्य श्रवण से परे जाकर अलौकिक ध्वनि को पकड़ता है।' } },
             { pali: 'Dibba-sota Citta', cittaId: 'kusala', story: { en: 'Clairaudient Javana: The consciousness that directly "hears" the distant sound arises, knowing its source and nature.', si: 'දිබ්බසෝත ජවන්: දුරස්ථ ශබ්දය කෙලින්ම "අසන" විඥානය පහළ වන අතර, එහි මූලාශ්‍රය සහ ස්වභාවය දැන ගනී.', ta: 'தெய்வீக செவி ஜவனம்: தொலைதூர ஒலியை நேரடியாக "கேட்கும்" உணர்வு எழுகிறது, அதன் மூலத்தையும் தன்மையையும் அறிந்து கொள்கிறது.', hi: 'दिव्यश्रवण चित्त: वह चेतना जो दूर की ध्वनि को सीधे "सुनती है" उत्पन्न होती है, उसके स्रोत और प्रकृति को जानते हुए।' } },
         ]
     }
@@ -277,7 +285,7 @@ export const REBIRTH_SCENARIOS: RebirthScenario[] = [
         initialStory: {
             en: 'A person who has lived a virtuous life is on their deathbed. A pleasant karmic sign (Kamma Nimitta) appears, leading to a heavenly rebirth.',
             si: 'ගුණවත් ජීවිතයක් ගත කළ පුද්ගලයෙක් මරණාසන්නව සිටී. සුගතිගාමී කර්ම නිමිත්තක් පහළ වී, දේව ලෝකයක උත්පත්තියට මග පාදයි.',
-            ta: 'ஒரு புண்ணிய జీవితம் வாழ்ந்த ஒருவர் மரணப் படுக்கையில் இருக்கிறார். ஒரு இனிமையான கர்ம அடையாளம் (கர்ம நிமித்தம்) தோன்றி, ஒரு சொர்க்க மறுபிறப்புக்கு வழிவகுக்கிறது.',
+            ta: 'ஒரு புண்ணிய வாழ்க்கை வாழ்ந்த ஒருவர் மரணப் படுக்கையில் இருக்கிறார். ஒரு இனிமையான கர்ம அடையாளம் (கர்ம நிமித்தம்) தோன்றி, ஒரு சொர்க்க மறுபிறப்புக்கு வழிவகுக்கிறது.',
             hi: 'एक पुण्यमय जीवन जीने वाला व्यक्ति अपनी मृत्यु शय्या पर है। एक सुखद कर्म निमित्त प्रकट होता है, जो एक स्वर्गीय पुनर्जन्म की ओर ले जाता है।',
         },
         steps: [
@@ -305,7 +313,7 @@ export const REBIRTH_SCENARIOS: RebirthScenario[] = [
         steps: [
             { pali: 'Bhavaṅga', cittaId: 'bhavanga', story: { en: 'The mind rests in a weak, flickering life-continuum stream.', si: 'සිත දුර්වල, චංචල භවාංග ප්‍රවාහයක විවේක ගනී.', ta: 'மனம் ஒரு பலவீனமான, மினுமினுக்கும் வாழ்க்கை-தொடர்ச்சி ஓட்டத்தில் ஓய்வெடுக்கிறது.', hi: 'मन एक कमजोर, टिमटिमाते हुए भवंग प्रवाह में विश्राम कर रहा है।' } },
             { pali: 'Mano-dvārāvajjana', cittaId: 'manodvaravajjana', story: { en: 'A frightful karmic sign (a memory of a harmful act) appears at the mind-door.', si: 'බියකරු කර්ම නිමිත්තක් (අහිතකර ක්‍රියාවක මතකයක්) මනෝද්වාරයට අරමුණු වේ.', ta: 'ஒரு பயங்கரமான கர்ம அடையாளம் (ஒரு தீங்கு விளைவிக்கும் செயலின் நினைவு) மன-வாசலில் தோன்றுகிறது.', hi: 'एक भयावह कर्म निमित्त (एक हानिकारक कार्य की स्मृति) मन-द्वार पर प्रकट होता है।' } },
-            { pali: 'Javana 1-5', cittaId: 'dosaCitta', story: { en: 'Five moments of unwholesome (akusala) impulsion rooted in aversion arise, sealing the kamma for a rebirth in a state of suffering.', si: 'ද්වේෂය මුල් වූ අකුසල් ජවන් සිත් පහක් පහළ වී, දුක්ඛිත භවයක උත්පත්තිය සඳහා කර්මය මුද්‍රා තබයි.', ta: 'வெறுப்பில் வேரூன்றிய தீய (அகுசல) மனக்கிளர்ச்சியின் ஐந்து கணங்கள் எழுகின்றன, ஒரு துன்பகரமான நிலையில் மறுபிறப்புக்கான கர்மாவை முத்திரையிடுகின்றன.', hi: 'घृणा में निहित अकुशल जवन के पांच क्षण उत्पन्न होते हैं, जो दुख की स्थिति में पुनर्जन्GEO के लिए कर्म को सील करते हैं।' } },
+            { pali: 'Javana 1-5', cittaId: 'dosaCitta', story: { en: 'Five moments of unwholesome (akusala) impulsion rooted in aversion arise, sealing the kamma for a rebirth in a state of suffering.', si: 'ද්වේෂය මුල් වූ අකුසල් ජවන් සිත් පහක් පහළ වී, දුක්ඛිත භවයක උත්පත්තිය සඳහා කර්මය මුද්‍රා තබයි.', ta: 'வெறுப்பில் வேரூன்றிய தீய (அகுசல) மனக்கிளர்ச்சியின் ஐந்து கணங்கள் எழுகின்றன, ஒரு துன்பகரமான நிலையில் மறுபிறப்புக்கான கர்மாவை முத்திரையிடுகின்றன.', hi: 'घृणा में निहित अकुशल जवन के पांच क्षण उत्पन्न होते हैं, जो दुख की स्थिति में पुनर्जन्म के लिए कर्म को सील करते हैं।' } },
             { pali: 'Cuti-citta', cittaId: 'cuti', story: { en: 'The final consciousness of this miserable life ceases.', si: 'මෙම දුක්ඛිත ජීවිතයේ අවසාන විඥාණය නිරුද්ධ වේ.', ta: 'இந்தத் துக்ககரமான வாழ்க்கையின் இறுதி உணர்வு நின்றுவிடுகிறது.', hi: 'इस दुखद जीवन की अंतिम चेतना समाप्त हो जाती है।' } },
             { pali: 'Paṭisandhi-citta', cittaId: 'patisandhi', story: { en: 'Instantly, the first consciousness of the new life arises in the Niraya realm, beginning a period of intense suffering.', si: 'ක්ෂණිකව, නව ජීවිතයේ පළමු විඥාණය නිරයේ පහළ වී, තීව්‍ර දුක්ඛ කාල පරිච්ඡේදයක් ආරම්භ කරයි.', ta: 'உடனடியாக, புதிய வாழ்க்கையின் முதல் உணர்வு நிரய உலகில் எழுகிறது, இது தீவிர துன்பத்தின் ஒரு காலத்தைத் தொடங்குகிறது.', hi: 'तुरंत, नए जीवन की पहली चेतना निरय लोक में उत्पन्न होती है, जो तीव्र पीड़ा की अवधि शुरू करती है।' } },
         ]

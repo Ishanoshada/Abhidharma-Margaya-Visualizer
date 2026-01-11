@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useMemo, useState, useCallback } from 'react';
 import { CITTAS, DISTRACTION_VITHI } from '../constants';
 import type { CittaInstance, VithiStep, Language } from '../types';
@@ -11,7 +12,7 @@ interface TimelineProps {
     allowDistractions?: boolean;
 }
 
-const TIMELINE_LENGTH = 17; // How many boxes to show
+const TIMELINE_LENGTH = 17; 
 
 const CittaVisual: React.FC<{ instance: CittaInstance | null, isHighlighted: boolean }> = ({ instance, isHighlighted }) => {
     if (!instance) {
@@ -75,42 +76,51 @@ export const Timeline: React.FC<TimelineProps> = ({ isPlaying, vithi, speed, onC
             let nextTimeline = [...timelineCittas];
 
             for (let i = 0; i < kshanasToSpawn; i++) {
-                 // Check if we need to start a new step
+                const currentStep = currentVithi[vithiStepRef.current];
+                
+                // Story update only at the start of a step
                 if (vithiDurationProgRef.current === 0) {
-                    const currentStep = currentVithi[vithiStepRef.current];
                     if (onStoryUpdate && currentStep.story) {
                         onStoryUpdate(currentStep.story);
                     }
                 }
                 
-                const currentStep = currentVithi[vithiStepRef.current];
-                
                 const newCitta: CittaInstance = {
                     id: `${timestamp}-${vithiStepRef.current}-${i}-${Math.random()}`,
-                    citta: CITTAS[currentStep.cittaId],
+                    citta: CITTAS[currentStep.cittaId] || CITTAS['bhavanga'],
                     startTime: timestamp,
                     duration: 0,
                     label: currentStep.label,
                 };
                 
                 onCittaSpawn(newCitta);
-                
                 nextTimeline = [...nextTimeline.slice(1), newCitta];
 
                 vithiDurationProgRef.current++;
+                
+                // Transition logic
                 if (vithiDurationProgRef.current >= currentStep.duration) {
                     const nextStepIndex = vithiStepRef.current + 1;
+                    
                     if (nextStepIndex >= currentVithi.length) {
-                        if (allowDistractions && currentVithiType === 'main' && Math.random() < 0.25) {
-                            setCurrentVithiType('distraction');
+                        // Jhāna absorption Rule: Continuous flow of Appanā
+                        if (currentStep.label === 'Appanā' || currentStep.cittaId.startsWith('jhana')) {
+                            // Reset counter for the same step to keep it flowing "infinitely"
+                            vithiDurationProgRef.current = 0; 
                         } else {
-                            setCurrentVithiType('main');
+                            // Non-absorption vithis cycle or switch to distraction
+                            if (allowDistractions && currentVithiType === 'main' && Math.random() < 0.25) {
+                                setCurrentVithiType('distraction');
+                            } else {
+                                setCurrentVithiType('main');
+                            }
+                            vithiStepRef.current = 0;
+                            vithiDurationProgRef.current = 0;
                         }
-                        vithiStepRef.current = 0;
                     } else {
                         vithiStepRef.current = nextStepIndex;
+                        vithiDurationProgRef.current = 0;
                     }
-                    vithiDurationProgRef.current = 0;
                 }
             }
             

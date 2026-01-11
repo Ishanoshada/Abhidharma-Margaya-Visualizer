@@ -1,6 +1,7 @@
+
 // Fix: Define and export Language type, remove circular import.
 export type Language = 'en' | 'si' | 'ta' | 'hi';
-export type Tab = 'foundation' | 'visualization' | 'panchaskandha' | 'paticcasamuppada' | 'dream' | 'abhinna' | 'maranasanna' | 'punabbhava' | 'suvisiPratyaya' | 'arpana';
+export type Tab = 'foundation' | 'visualization' | 'masterDashboard' | 'panchaskandha' | 'paticcasamuppada' | 'dream' | 'abhinna' | 'maranasanna' | 'punabbhava' | 'suvisiPratyaya' | 'arpana';
 
 export type Cetasika = {
     id: string;
@@ -9,7 +10,7 @@ export type Cetasika = {
 };
 
 export type CittaType = 'kusala' | 'vipaka' | 'kiriya' | 'akusala' | 'jhana' | 'magga' | 'phala';
-export type VedanaType = 'somanassa' | 'domanassa' | 'upekkha';
+export type VedanaType = 'somanassa' | 'domanassa' | 'upekkha' | 'sukha';
 
 export type Citta = {
     id: string;

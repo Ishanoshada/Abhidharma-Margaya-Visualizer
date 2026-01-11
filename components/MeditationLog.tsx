@@ -18,12 +18,12 @@ const LOG_ENTRIES = [
     { time: 0, text: "The session begins. The mind settles, focusing on the concept of {kasina}." },
     { time: 1, text: "Initial distractions arise, but the focus gently returns to the object of meditation." },
     { time: 5, text: "Access concentration is achieved. The meditation object becomes clearer and more stable in the mind's eye." },
-    { time: 10, text: "The first Dhyāna arises. A state of pleasant sensation (Pīti) and happiness (Sukha) pervades the mind, accompanied by initial and sustained thought (Vitakka-Vicāra)." },
+    { time: 15, text: "The first Dhyāna arises. A state of pleasant sensation (Pīti) and happiness (Sukha) pervades the mind, accompanied by initial and sustained thought (Vitakka-Vicāra)." },
     { time: 20, text: "Concentration deepens within the first Dhyāna. The mind remains absorbed with the object." },
-    { time: 25, text: "The mind transitions to the second Dhyāna. Initial and sustained thought fade away, leaving profound inner tranquility and one-pointedness." },
+    { time: 25, text: "The mind transitions to the second Dhyāna. Initial thought (Vitakka) fades away, leaving profound inner tranquility and sustained thought (Vicāra)." },
     { time: 30, text: "Stability in the second Dhyāna is cultivated. Rapture and happiness remain strong." },
-    { time: 35, text: "Rapture (Pīti) fades, leading to the third Dhyāna. A more subtle, equanimous happiness (Sukha) remains with mindfulness." },
-    { time: 40, text: "The fourth Dhyāna is attained. Even happiness is relinquished, giving way to pure equanimity (Upekkhā) and one-pointedness." },
+    { time: 35, text: "Sustained thought (Vicāra) and Rapture (Pīti) fade, leading to the third Dhyāna. Blissful happiness (Sukha) remains with mindfulness." },
+    { time: 40, text: "The fourth Dhyāna is attained. Happiness is relinquished, giving way to pure equanimity (Upekkhā) and one-pointedness." },
     { time: 45, text: "The session concludes. The mind gently withdraws from the deep state of concentration." },
 ];
 
