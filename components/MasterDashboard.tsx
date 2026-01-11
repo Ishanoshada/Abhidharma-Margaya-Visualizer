@@ -120,13 +120,13 @@ const PRATYAYA_LABELS: Record<string, Record<Language, string>> = {
     adhipati: { en: 'Dominance', si: 'අධිපති', ta: 'அதிபதி', hi: 'அதிபதி' },
     anantara: { en: 'Proximity', si: 'අනන්තර', ta: 'அனந்தர', hi: 'अनन्तर' },
     samanantara: { en: 'Contiguity', si: 'සමනන්තර', ta: 'සමනන්තර', hi: 'समनन्तर' },
-    sahajata: { en: 'Co-nascence', si: 'සහජාත', ta: 'சஹஜாத', hi: 'सहजात' },
+    sahajata: { en: 'Co-nascence', si: 'සහජාත', ta: 'සහජාත', hi: 'सहजात' },
     annamanna: { en: 'Mutuality', si: 'අඤ්ඤමඤ්ඤ', ta: 'அஞ்ஞமஞ்ஞ', hi: 'अन्योन्य' },
     nissaya: { en: 'Dependence', si: 'නිස්සය', ta: 'நிஸ்ஸய', hi: 'निस्सय' },
     upanissaya: { en: 'Decisive Support', si: 'උපනිස්සය', ta: 'உபனிஸ்ஸய', hi: 'உपनिस्रय' },
     purejata: { en: 'Pre-nascence', si: 'පුරේජාත', ta: 'புரேஜாத', hi: 'पुरेजात' },
     pacchajata: { en: 'Post-nascence', si: 'පච්ඡාජාත', ta: 'பச்சாஜாத', hi: 'पच्छाजात' },
-    asevana: { en: 'Repetition', si: 'ආසේවන', ta: 'ஆசேவன', hi: 'आसेवन' },
+    asevana: { en: 'Repetition', si: 'ආසේවන', ta: 'ආසේවන', hi: 'आसेवन' },
     kamma: { en: 'Kamma', si: 'කම්ම', ta: 'கம்ம', hi: 'कम्म' },
     vipaka: { en: 'Result', si: 'විපාක', ta: 'விபாகம்', hi: 'विपाक' },
     ahara: { en: 'Nutriment', si: 'ආහාර', ta: 'ආහාර', hi: 'आहार' },
@@ -137,8 +137,8 @@ const PRATYAYA_LABELS: Record<string, Record<Language, string>> = {
     vippayutta: { en: 'Dissociation', si: 'විප්පයුත්ත', ta: 'විප්පයුත්ත', hi: 'විප්‍රයුත්ත' },
     atthi: { en: 'Presence', si: 'අත්ථි', ta: 'அத்தி', hi: 'अत्थि' },
     natthi: { en: 'Absence', si: 'නත්ථි', ta: 'நத்தி', hi: 'නත්ථි' },
-    vigata: { en: 'Disappearance', si: 'විගත', ta: 'விகத', hi: 'விगत' },
-    avigata: { en: 'Non-disappearance', si: 'අවිගත', ta: 'அவிகத', hi: 'අවිගත' }
+    vigata: { en: 'Disappearance', si: 'විගත', ta: 'விகத', hi: 'විගත' },
+    avigata: { en: 'Non-disappearance', si: 'අවිගත', ta: 'අවිගත', hi: 'අවිගත' }
 };
 
 const AGGREGATE_LABELS: Record<string, Record<Language, string>> = {
@@ -152,24 +152,24 @@ const AGGREGATE_LABELS: Record<string, Record<Language, string>> = {
 const ELEMENT_LABELS: Record<string, Record<Language, string>> = {
     pathavi: { en: 'Paṭhavī', si: 'පඨවි', ta: 'பதவி', hi: 'पथवी' },
     apo: { en: 'Āpo', si: 'ආපෝ', ta: 'ஆபோ', hi: 'आबा' },
-    tejo: { en: 'Tejo', si: 'තේජෝ', ta: 'தேஜෝ', hi: 'तेजो' },
-    vayo: { en: 'Vāyo', si: 'වායෝ', ta: 'வாயோ', hi: 'वायो' }
+    tejo: { en: 'Tejo', si: 'තේජෝ', ta: 'தேජෝ', hi: 'तेजो' },
+    vayo: { en: 'Vāyo', si: 'වායෝ', ta: 'වායෝ', hi: 'වායෝ' }
 };
 
 const CITTA_TYPE_LABELS: Record<string, Record<Language, string>> = {
     kusala: { en: 'Wholesome', si: 'කුසල', ta: 'நன்மை', hi: 'कुशल' },
     akusala: { en: 'Unwholesome', si: 'අකුසල', ta: 'தீமை', hi: 'अकुशल' },
-    vipaka: { en: 'Resultant', si: 'විපාක', ta: 'விபாகம்', hi: 'विपाक' },
-    kiriya: { en: 'Functional', si: 'කිරිය', ta: 'கிரியா', hi: 'क्रिया' },
+    vipaka: { en: 'Resultant', si: 'විපාක', ta: 'விபாகம்', hi: 'විපාක' },
+    kiriya: { en: 'Functional', si: 'කිරිය', ta: 'கிரியா', hi: 'ක්රියා' },
     jhana: { en: 'Jhāna', si: 'ඣාන', ta: 'தியானம்', hi: 'झान' },
     magga: { en: 'Path', si: 'මග්ග', ta: 'மார்க்க', hi: 'මග්ග' },
-    phala: { en: 'Fruition', si: 'ඵල', ta: 'பலன்', hi: 'ফল' }
+    phala: { en: 'Fruition', si: 'ඵල', ta: 'பலன்', hi: 'ඵල' }
 };
 
 const VEDANA_TYPE_LABELS: Record<string, Record<Language, string>> = {
     somanassa: { en: 'Joy', si: 'සෝමනස්ස', ta: 'மகிழ்ச்சி', hi: 'सौमनस्य' },
-    domanassa: { en: 'Grief', si: 'දෝමනස්ස', ta: 'දුක්ඛ', hi: 'दौमनस्य' },
-    upekkha: { en: 'Equanimity', si: 'උපේක්ඛා', ta: 'சමநிலை', hi: 'உपेक्षा' }
+    domanassa: { en: 'Grief', si: 'දෝමනස්ස', ta: 'දුක්ඛ', hi: 'දෞමනස්ය' },
+    upekkha: { en: 'Equanimity', si: 'උපේක්ඛා', ta: 'சமநிலை', hi: 'उपेक्षा' }
 };
 
 const UI_LABELS: Record<string, Record<Language, string>> = {
@@ -181,17 +181,17 @@ const UI_LABELS: Record<string, Record<Language, string>> = {
     focus: { en: 'Focus', si: 'සමාධිගත වන්න', ta: 'கவனம்', hi: 'ध्यान केंद्रित' },
     exitFocus: { en: 'Exit Focus', si: 'නික්මෙන්න', ta: 'வெளியேறு', hi: 'बाहर निकलें' },
     conditionMatrix: { en: 'Condition Matrix', si: 'ප්‍රත්‍යය අනුකෘතිය', ta: 'நிபந்தனை அணி', hi: 'प्रत्यय मैट्रिक्स' },
-    streamTelemetry: { en: 'STREAM TELEMETRY', si: 'ප්‍රවාහ ටෙලිමෙට්‍රි', ta: 'ஓடை டெலிமெட்டரி', hi: 'அலைவரிசை டெலிமெட்ரி' },
+    streamTelemetry: { en: 'STREAM TELEMETRY', si: 'ප්‍රවාහ ටෙලිමෙට්‍රි', ta: 'ஓடை டெலிமெட்டரி', hi: 'अலைவரிசை டெලිமெට්ਰੀ' },
     momentData: { en: 'Moment Data', si: 'ක්ෂණ දත්ත', ta: 'கண தரவு', hi: 'क्षण डेटा' },
-    cetasikaLattice: { en: 'Active Cetasika Lattice', si: 'සක්‍රීය චෛතසික ජාලය', ta: 'செயலில் உள்ள சைதசிக வலையமைப்பு', hi: 'सक्रिय चैतसिक जाली' },
+    cetasikaLattice: { en: 'Active Cetasika Lattice', si: 'සක්‍රීය චෛතසික ජාලය', ta: 'செயலில் உள்ள சைதசிக வலையமைப்பு', hi: 'සක්රීය චෛතසික ජාලය' },
     systemProcess: { en: 'System Process Stream', si: 'පද්ධති ක්‍රියාවලි ප්‍රවාහය', ta: 'கணினி செயல்முறை ஓடை', hi: 'सिस्टम प्रक्रिया प्रवाह' },
     realtimeTelemetry: { en: 'Real-time Telemetry', si: 'තථ්‍ය කාලීන ටෙලිමෙට්‍රි', ta: 'நிகழ்நேர டெலிமெட்ரி', hi: 'रीयल-टाइम टेलीमेट्री' },
     waiting: { en: 'Waiting for mind-stream initialization...', si: 'චිත්ත ප්‍රවාහය ආරම්භ වන තෙක් රැඳී සිටින්න...', ta: 'மன-ஓட்டத் தொடக்கத்திற்காக காத்திருக்கிறது...', hi: 'चित्त-प्रवाह प्रारंभ होने की प्रतीक्षा कर रहा है...' },
     stabilityAnalysis: { en: 'Stability Analysis', si: 'ස්ථාවරත්ව විශ්ලේෂණය', ta: 'நிலைத்தன்மை பகுப்பாய்வு', hi: 'स्थिरता विश्लेषण' },
     sysVersion: { en: 'System Version', si: 'පද්ධති සංස්කරණය', ta: 'பதிப்பு', hi: 'सिस्टम संस्करण' },
-    stabilityLabel: { en: 'Stability', si: 'ස්ථාවරත්වය', ta: 'நிலைத்தன்மை', hi: 'स्थිරතාවය' },
+    stabilityLabel: { en: 'Stability', si: 'ස්ථාවරත්වය', ta: 'நிலைத்தன்மை', hi: 'स्थिरता' },
     vedana: { en: 'VEDANĀ', si: 'වේදනා', ta: 'வேதனை', hi: 'वेदना' },
-    domain: { en: 'DOMAIN', si: 'ගෝත්‍රය', ta: 'டொமைன்', hi: 'डोमेन' },
+    domain: { en: 'DOMAIN', si: 'ගෝත්‍රය', ta: 'டொமைන්', hi: 'डोमेन' },
     processedMoment: { en: 'PROCESSED_MOMENT', si: 'සකසන ලද ක්ෂණය', ta: 'செயல்படுத்தப்பட்ட கணம்', hi: 'संसाधित क्षण' },
     phase: { en: 'PHASE', si: 'අදියර', ta: 'கட்டம்', hi: 'चरण' },
     aggregateBalance: { en: 'Aggregate Balance', si: 'ස්කන්ධ තුලනය', ta: 'திறன் சமநிலை', hi: 'स्कंध संतुलन' },
@@ -211,14 +211,14 @@ const NIDANA_LABELS = {
     avijja: { en: 'Ignorance', si: 'අවිද්‍යාව', ta: 'அவித்தை', hi: 'अविद्या' },
     sankhara: { en: 'Formations', si: 'සංස්කාර', ta: 'சம்ஸ்காரம்', hi: 'संस्कार' },
     vinnana: { en: 'Consciousness', si: 'විඥානය', ta: 'விஞ்ஞானம்', hi: 'विज्ञान' },
-    namarupa: { en: 'Name & Form', si: 'නාමරූප', ta: 'நாமரூபம்', hi: 'नामरूप' },
+    namarupa: { en: 'Name & Form', si: 'නාමරූප', ta: 'நாமரூபம்', hi: 'නාමරූප' },
     salayatana: { en: 'Six Senses', si: 'සළායතන', ta: 'ஆறு புலன்கள்', hi: 'षडायतन' },
     phassa: { en: 'Contact', si: 'ඵස්ස', ta: 'ஸ்பரிசம்', hi: 'ஸ்பर्श' },
     vedana: { en: 'Feeling', si: 'වේදනා', ta: 'வேதனை', hi: 'वेदना' },
     tanha: { en: 'Craving', si: 'තණ්හා', ta: 'தாகம்', hi: 'तृष्णा' },
     upadana: { en: 'Clinging', si: 'උපාදාන', ta: 'பற்று', hi: 'උපාදාන' },
-    bhava: { en: 'Becoming', si: 'භව', ta: 'பவம்', hi: 'भव' },
-    jati: { en: 'Birth', si: 'ජාති', ta: 'பிறப்பு', hi: 'जाதி' },
+    bhava: { en: 'Becoming', si: 'භව', ta: 'பவம்', hi: 'භව' },
+    jati: { en: 'Birth', si: 'ජාති', ta: 'பிறப்பு', hi: 'ජාති' },
     jaramarana: { en: 'Aging & Death', si: 'ජරා මරණ', ta: 'மூப்பு & மரணம்', hi: 'जरा-मरण' }
 };
 
@@ -343,6 +343,10 @@ export const MasterDashboard: React.FC<MasterDashboardProps> = ({ language: init
     const [currentRandomVithi, setCurrentRandomVithi] = useState<string[]>(VITHI_PATTERNS.bhavanga);
     const [kernelCode, setKernelCode] = useState<string>("");
     
+    // Auto-hide header states
+    const [isFullscreenHeaderVisible, setIsFullscreenHeaderVisible] = useState(true);
+    const hideHeaderTimerRef = useRef<NodeJS.Timeout | null>(null);
+
     const colors = THEME_COLORS[theme];
     
     const activeExample = useMemo(() => 
@@ -353,6 +357,29 @@ export const MasterDashboard: React.FC<MasterDashboardProps> = ({ language: init
     const tickInterval = 1000 / frequency;
 
     const getT = (obj: Record<Language, string>) => obj[currentLang] || obj['en'];
+
+    // Handle auto-hide logic
+    useEffect(() => {
+        if ((parentIsFullscreen || internalFullscreen)) {
+            setIsFullscreenHeaderVisible(true);
+            if (hideHeaderTimerRef.current) clearTimeout(hideHeaderTimerRef.current);
+            hideHeaderTimerRef.current = setTimeout(() => {
+                setIsFullscreenHeaderVisible(false);
+            }, 5000);
+        } else {
+            setIsFullscreenHeaderVisible(true);
+            if (hideHeaderTimerRef.current) clearTimeout(hideHeaderTimerRef.current);
+        }
+        return () => { if (hideHeaderTimerRef.current) clearTimeout(hideHeaderTimerRef.current); };
+    }, [parentIsFullscreen, internalFullscreen]);
+
+    const showHeaderOnTopHover = () => {
+        setIsFullscreenHeaderVisible(true);
+        if (hideHeaderTimerRef.current) clearTimeout(hideHeaderTimerRef.current);
+        hideHeaderTimerRef.current = setTimeout(() => {
+            setIsFullscreenHeaderVisible(false);
+        }, 5000);
+    };
 
     useEffect(() => {
         setFrequency(1000 / activeExample.speed);
@@ -508,6 +535,17 @@ export const MasterDashboard: React.FC<MasterDashboardProps> = ({ language: init
 
     const toggleFullscreen = () => setInternalFullscreen(!internalFullscreen);
 
+    // Neural Grid and Ripple background nodes
+    const backgroundNodes = useMemo(() => {
+        return Array.from({ length: 40 }).map((_, i) => ({
+            id: i,
+            x: Math.random() * 100,
+            y: Math.random() * 100,
+            size: 2 + Math.random() * 3,
+            speed: 0.5 + Math.random() * 2
+        }));
+    }, []);
+
     return (
         <div className={`flex flex-col gap-6 ${isActuallyFullscreen ? '' : 'animate-citta-arise'}`}>
             <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-end gap-3 px-4">
@@ -547,12 +585,27 @@ export const MasterDashboard: React.FC<MasterDashboardProps> = ({ language: init
 
             <div className={`${isActuallyFullscreen ? 'fixed inset-0 z-[999] rounded-none' : `relative h-[1180px] rounded-[3rem]`} w-full ${theme === 'matrix' ? 'bg-black' : colors.bg} ${colors.text} flex flex-col font-mono border-4 ${colors.border} shadow-2xl transition-all duration-500 overflow-hidden`}>
                 {isActuallyFullscreen && (
-                    <header className={`flex flex-col sm:flex-row items-center justify-between px-8 py-4 border-b ${colors.accent}/20 ${colors.bg}/80 backdrop-blur-2xl z-[1001] gap-4`}><div className="flex items-center gap-4"><div className={`w-4 h-4 rounded-full bg-${colors.accent} animate-pulse shadow-[0_0_15px_${colors.glow}]`}></div><h1 className={`text-xl font-black tracking-tighter ${colors.accentText} uppercase leading-none`}>{getT(UI_LABELS.monitorTitle)} [{getT(UI_LABELS.focus).toUpperCase()}]</h1></div><button onClick={toggleFullscreen} className="p-2 px-6 rounded-xl font-black uppercase tracking-widest text-[10px] bg-red-500/10 border border-red-500/30 text-red-500 hover:bg-red-500 hover:text-white transition-all shrink-0">{getT(UI_LABELS.exitFocus)}</button></header>
+                    <>
+                        {/* Auto-hiding Header */}
+                        <header className={`flex flex-col sm:flex-row items-center justify-between px-8 py-4 border-b ${colors.accent}/20 ${colors.bg}/80 backdrop-blur-2xl z-[1001] gap-4 absolute inset-x-0 top-0 transition-transform duration-700 ease-in-out ${isFullscreenHeaderVisible ? 'translate-y-0' : '-translate-y-full'}`}>
+                            <div className="flex items-center gap-4">
+                                <div className={`w-4 h-4 rounded-full bg-${colors.accent} animate-pulse shadow-[0_0_15px_${colors.glow}]`}></div>
+                                <h1 className={`text-xl font-black tracking-tighter ${colors.accentText} uppercase leading-none`}>{getT(UI_LABELS.monitorTitle)} [{getT(UI_LABELS.focus).toUpperCase()}]</h1>
+                            </div>
+                            <button onClick={toggleFullscreen} className="p-2 px-6 rounded-xl font-black uppercase tracking-widest text-[10px] bg-red-500/10 border border-red-500/30 text-red-500 hover:bg-red-500 hover:text-white transition-all shrink-0">{getT(UI_LABELS.exitFocus)}</button>
+                        </header>
+                        {/* Cursor detection area to show header */}
+                        <div 
+                            className="absolute top-0 left-0 right-0 h-4 z-[1002]" 
+                            onMouseEnter={showHeaderOnTopHover}
+                            onMouseMove={showHeaderOnTopHover}
+                        ></div>
+                    </>
                 )}
-                <div className="flex-grow flex overflow-hidden min-h-0">
+                <div className={`flex-grow flex overflow-hidden min-h-0 ${isActuallyFullscreen ? 'pt-0' : ''}`}>
                     <aside className={`w-72 border-r ${colors.border} flex flex-col ${colors.bg}/40 backdrop-blur-3xl z-40 shrink-0`}><div className="p-5 flex flex-col h-full min-h-0 overflow-hidden"><h3 className={`text-[10px] ${colors.muted} font-black uppercase mb-4 tracking-widest flex items-center gap-3`}><div className="w-2.5 h-2.5 bg-yellow-500 rounded-sm"></div>{getT(UI_LABELS.conditionMatrix)}</h3><div className="h-28 mb-4 w-full bg-slate-950/40 rounded-xl border border-slate-800/50 p-2 overflow-hidden flex flex-col shrink-0"><div className="flex justify-between items-center mb-1"><span className="text-[7px] text-slate-500 font-bold uppercase tracking-widest">{getT(UI_LABELS.causalComplexity)}</span><span className={`text-[8px] ${colors.accentText} font-mono`}>{activePratyayas.size}/24</span></div><div className="flex-grow"><ResponsiveContainer width="100%" height="100%"><AreaChart data={complexityHistory}><defs><linearGradient id={`complexityGrad-${theme}`} x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor={colors.secondaryHex} stopOpacity={0.4}/><stop offset="95%" stopColor={colors.secondaryHex} stopOpacity={0}/></linearGradient></defs><Area type="step" dataKey="value" stroke={colors.secondaryHex} fill={`url(#complexityGrad-${theme})`} strokeWidth={1.5} isAnimationActive={false} /></AreaChart></ResponsiveContainer></div></div>
                     
-                    {/* Causal Kernel Execute - Relocated to left side below Complexity chart */}
+                    {/* Causal Kernel Execute */}
                     <div className="flex flex-col min-h-0 h-28 bg-slate-950/50 rounded-xl border-2 border-dashed border-slate-700/50 p-2 mb-4 relative overflow-hidden group">
                         <div className={`text-[8px] ${colors.muted} font-black uppercase mb-1 tracking-widest text-center flex items-center justify-center gap-2`}>
                             <div className="w-1 h-1 bg-red-500 rounded-full animate-ping"></div>
@@ -569,7 +622,7 @@ export const MasterDashboard: React.FC<MasterDashboardProps> = ({ language: init
                         <div className={`absolute bottom-0 inset-x-0 h-px bg-${colors.accent} opacity-30 shadow-[0_0_10px_${colors.glow}]`}></div>
                     </div>
 
-                    {/* NEW GRAPH: Neural Resonance Density - Added to left side down */}
+                    {/* Neural Resonance Density */}
                     <div className="flex flex-col min-h-0 h-28 bg-slate-950/60 rounded-xl border border-slate-700/50 p-2 mb-4 relative overflow-hidden group">
                         <div className={`text-[8px] ${colors.muted} font-black uppercase mb-1 tracking-widest text-center flex items-center justify-center gap-2`}>
                             <div className="w-1 h-1 bg-cyan-500 rounded-full animate-pulse"></div>
@@ -595,7 +648,71 @@ export const MasterDashboard: React.FC<MasterDashboardProps> = ({ language: init
                     
                     <main className={`flex-grow flex flex-col relative ${theme === 'matrix' ? 'bg-black' : colors.bg} overflow-hidden min-w-0`}>
                     
-                    <div className={`grid grid-cols-5 gap-px ${colors.muted}/40 border-b ${colors.border}`}>{[ { key: 'rupa', label: AGGREGATE_LABELS.rupa }, { key: 'vedana', label: AGGREGATE_LABELS.vedana }, { key: 'sanna', label: AGGREGATE_LABELS.sanna }, { key: 'sankhara', label: AGGREGATE_LABELS.sankhara }, { key: 'vinnana', label: AGGREGATE_LABELS.vinnana } ].map((agg, i) => ( <div key={agg.key} className={`${colors.cardBg} p-3 space-y-2`}><div className={`flex justify-between text-[9px] uppercase tracking-tighter ${colors.muted} font-black`}><span>{getT(agg.label)}</span><span className={colors.accentText}>{(aggregates[i]).toFixed(1)}%</span></div><div className={`h-1 ${theme === 'matrix' ? 'bg-zinc-950' : 'bg-slate-900'} rounded-full overflow-hidden`}><div className={`h-full bg-${colors.accent}/80 transition-all duration-700 ease-out`} style={{ width: `${aggregates[i]}%` }}></div></div></div> ))}</div><div className="flex-grow relative flex flex-col items-center justify-center p-4 min-h-0"><div className="absolute inset-0 pointer-events-none opacity-[0.05]" style={{ backgroundImage: `linear-gradient(${colors.accentHex} 1px, transparent 1px), linear-gradient(90deg, ${colors.accentHex} 1px, transparent 1px)`, backgroundSize: '60px 60px' }}></div><div className={`absolute top-4 left-4 w-40 h-40 ${colors.bg}/60 rounded-3xl border ${colors.border} p-2 z-50`}><div className={`text-[8px] ${colors.muted} font-black uppercase text-center mb-1`}>{getT(UI_LABELS.aggregateBalance)}</div><ResponsiveContainer width="100%" height="85%"><RadarChart cx="50%" cy="50%" outerRadius="70%" data={radarData}><PolarGrid stroke={colors.gridColor} /><PolarAngleAxis dataKey="subject" tick={{ fill: theme === 'matrix' ? colors.accentHex : '#475569', fontSize: 6 }} /><Radar name="Aggregates" dataKey="A" stroke={colors.accentHex} fill={colors.accentHex} fillOpacity={0.4} /></RadarChart></ResponsiveContainer></div><div className={`absolute top-4 right-48 w-44 h-44 ${colors.bg}/80 rounded-3xl border ${colors.border} p-3 z-50 shadow-2xl backdrop-blur-md`}><div className={`text-[8px] ${colors.muted} font-black uppercase text-center mb-2`}>{getT(UI_LABELS.paticcasamuppada)}</div><div className="relative w-full h-32 flex items-center justify-center"><div className={`absolute w-24 h-24 border ${colors.border} rounded-full`}></div>{Object.keys(NIDANA_LABELS).map((key, i) => { const angle = (i * 30) - 90; const isActive = activeNidanas.has(i); return ( <div key={key} className={`absolute w-4 h-4 rounded-full border transition-all duration-500 ${isActive ? `bg-${colors.accent} border-${colors.accent} scale-150 shadow-lg shadow-${colors.glow}` : `bg-slate-900 border-slate-800`}`} style={{ transform: `rotate(${angle}deg) translateY(-40px) rotate(-${angle}deg)` }}></div> ); })}</div></div><div className={`absolute top-4 right-4 w-40 h-40 ${colors.bg}/60 rounded-3xl border ${colors.border} p-2 z-50`}><div className={`text-[8px] ${colors.muted} font-black uppercase text-center mb-1`}>{getT(UI_LABELS.typeMix)}</div><ResponsiveContainer width="100%" height="85%"><PieChart><Pie data={pieData} innerRadius={20} outerRadius={35} paddingAngle={5} dataKey="value">{pieData.map((entry, index) => ( <Cell key={`cell-${index}`} fill={[colors.accentHex, colors.secondaryHex, '#f59e0b', '#ef4444'][index % 4]} stroke="none" /> ))}</Pie></PieChart></ResponsiveContainer></div><div className="relative w-full max-w-5xl px-12"><div className="text-center mb-10"><div className={`text-${colors.accent}/40 text-[9px] font-black tracking-[0.6em] flex items-center justify-center gap-6`}><div className={`h-px flex-grow bg-gradient-to-r from-transparent to-${colors.accent}/20`}></div>{getT(UI_LABELS.streamTelemetry)}<div className={`h-px flex-grow bg-gradient-to-l from-transparent to-${colors.accent}/20`}></div></div></div><div className="flex items-center justify-center py-8"><div className="flex items-center"><div className="flex flex-row-reverse items-center gap-4">{timeline.slice(1, 6).map((cId, idx) => { const citta = cId ? CITTAS[cId] : null; return ( <div key={`hist-${idx}`} className="relative flex flex-col items-center opacity-40 scale-95 grayscale-[0.5]"><div className="w-20 h-24 rounded-2xl border bg-slate-900/30 border-slate-800/60 flex flex-col items-center justify-center"><div className={`text-[6px] text-${colors.accent}/40 font-black mb-1 uppercase truncate w-full px-1 text-center`}>{citta ? getT(CITTA_TYPE_LABELS[citta.type] || {en: citta.type, si: citta.type, ta: citta.type, hi: citta.type}) : '...'}</div><div className={`text-[9px] font-black text-center leading-tight px-1 uppercase tracking-tighter ${colors.muted}`}>{citta ? citta.pali : '...'}</div></div></div> ); })}</div><div className="mx-4 relative flex flex-col items-center z-10">{timeline[0] && CITTAS[timeline[0]!] ? ( <div key={`${tick}-active`} className="animate-citta-arise"><div className={`w-20 h-24 rounded-2xl border flex flex-col items-center justify-center bg-${colors.accent}/15 border-${colors.accent} scale-110 shadow-[0_0_40px_${colors.glow}]`}><div className={`text-[6px] text-${colors.accent}/60 font-black mb-1 uppercase truncate w-full px-1 text-center`}>{getT(CITTA_TYPE_LABELS[CITTAS[timeline[0]!].type] || {en: CITTAS[timeline[0]!].type, si: CITTAS[timeline[0]!].type, ta: CITTAS[timeline[0]!].type, hi: CITTAS[timeline[0]!].type})}</div><div className={`text-[9px] font-black text-center leading-tight px-1 uppercase tracking-tighter ${colors.text}`}>{CITTAS[timeline[0]!].pali}</div></div></div> ) : ( <div className="w-20 h-24 rounded-2xl border border-dashed border-slate-800 flex items-center justify-center"><span className="text-[8px] text-slate-700 font-bold uppercase">Ready</span></div> )}</div><div className="flex items-center gap-4">{[...Array(5)].map((_, i) => ( <div key={`spacer-${i}`} className="w-20 h-24 opacity-0 pointer-events-none hidden sm:block"></div> ))}</div></div></div></div><div className="absolute bottom-6 left-6 right-6 grid grid-cols-4 gap-4 z-40"><div className={`${colors.bg}/80 border ${colors.border} p-4 rounded-[1.5rem] backdrop-blur-xl`}><div className={`text-[9px] ${colors.muted} font-black uppercase mb-2`}>{getT(UI_LABELS.momentData)}</div><div className="space-y-1 text-[10px]"><div className="flex justify-between"><span className={`${colors.muted} uppercase`}>{getT(UI_LABELS.vedana)}:</span><span className={`text-${colors.secondary} uppercase font-bold`}>{getT(VEDANA_TYPE_LABELS[activeCittaMoment.vedana] || {en: activeCittaMoment.vedana, si: activeCittaMoment.vedana, ta: activeCittaMoment.vedana, hi: activeCittaMoment.vedana})}</span></div><div className="flex justify-between"><span className={`${colors.muted} uppercase`}>{getT(UI_LABELS.domain)}:</span><span className="text-amber-500 uppercase font-bold">{getT(CITTA_TYPE_LABELS[activeCittaMoment.type] || {en: activeCittaMoment.type, si: activeCittaMoment.type, ta: activeCittaMoment.type, hi: activeCittaMoment.type})}</span></div></div></div><div className={`${colors.bg}/80 border ${colors.border} p-4 rounded-[1.5rem] backdrop-blur-xl col-span-3 overflow-hidden`}><div className={`text-[9px] ${colors.muted} font-black uppercase mb-2`}>{getT(UI_LABELS.cetasikaLattice)}</div><div className="flex flex-wrap gap-1.5 max-h-[60px] overflow-y-auto custom-scrollbar">{activeCittaMoment.cetasikas.map(cId => ( <span key={cId} className={`px-2 py-1 bg-slate-900 border border-slate-800 text-[8px] ${colors.muted} rounded-lg font-black uppercase`}>{CETASIKAS[cId]?.pali || cId}</span> ))}</div></div></div></div><div className={`h-40 border-t ${colors.border} ${colors.bg}/90 flex flex-col font-mono shrink-0`}><div className={`px-4 py-2 bg-slate-900/50 border-b ${colors.border} flex justify-between items-center`}><span className={`text-[9px] font-black text-${colors.accent}/60 uppercase tracking-widest flex items-center gap-2`}><div className={`w-1.5 h-1.5 rounded-full bg-${colors.accent} animate-pulse`}></div>{getT(UI_LABELS.systemProcess)}</span><span className={`text-[8px] ${colors.muted} uppercase font-black tracking-tighter`}>{getT(UI_LABELS.realtimeTelemetry)}</span></div><div className="flex-grow overflow-y-auto custom-scrollbar p-3 space-y-1 text-[9px]">{systemLog.length > 0 ? systemLog.map(entry => ( <div key={entry.id} className="flex items-center gap-4 group animate-citta-arise"><span className={`${colors.muted} shrink-0`}>[{entry.timestamp}]</span><span className={`font-black tracking-widest shrink-0 ${entry.isKusala ? 'text-emerald-500' : 'text-rose-500'}`}>{entry.isKusala ? '>>>' : '!!!'}</span><span className={`${colors.text} font-bold uppercase shrink-0 w-24 truncate`}>{entry.cittaPali}</span><span className={`${colors.muted} shrink-0 uppercase`}>{getT(UI_LABELS.processedMoment)}:</span><span className={`${colors.accentText}/80 group-hover:${colors.accentText} uppercase tracking-tighter`}>{getT(UI_LABELS.phase)} {getT(CITTA_TYPE_LABELS[entry.type] || {en: entry.type, si: entry.type, ta: entry.type, hi: entry.type})}</span><div className={`flex-grow h-px ${colors.accent.split('-')[1]}-900 opacity-20`}></div></div> )) : ( <div className={`h-full flex items-center justify-center ${colors.muted} animate-pulse uppercase text-[10px] font-black tracking-widest`}>{getT(UI_LABELS.waiting)}</div> )}</div></div></main>
+                    {/* ENHANCED MIND-BLOWING BACKGROUND ANIMATIONS */}
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        {/* Synaptic Neural Web Layer */}
+                        <svg width="100%" height="100%" className="absolute inset-0 opacity-10">
+                            {backgroundNodes.map((node, i) => (
+                                <React.Fragment key={node.id}>
+                                    <circle 
+                                        cx={`${node.x}%`} 
+                                        cy={`${node.y}%`} 
+                                        r={node.size} 
+                                        fill={colors.accentHex}
+                                    >
+                                        <animate 
+                                            attributeName="opacity" 
+                                            values="0.2;0.8;0.2" 
+                                            dur={`${node.speed}s`} 
+                                            repeatCount="indefinite" 
+                                        />
+                                    </circle>
+                                    {backgroundNodes.slice(i + 1, i + 4).map((target, j) => (
+                                        <line 
+                                            key={`${i}-${j}`}
+                                            x1={`${node.x}%`} y1={`${node.y}%`}
+                                            x2={`${target.x}%`} y2={`${target.y}%`}
+                                            stroke={colors.accentHex}
+                                            strokeWidth="0.5"
+                                            strokeDasharray="4 4"
+                                        >
+                                            <animate 
+                                                attributeName="stroke-opacity" 
+                                                values="0;0.3;0" 
+                                                dur={`${node.speed + target.speed}s`} 
+                                                repeatCount="indefinite" 
+                                            />
+                                        </line>
+                                    ))}
+                                </React.Fragment>
+                            ))}
+                        </svg>
+
+                        {/* Floating Cittaja Rupa Energy Particles */}
+                        <div className="absolute inset-0">
+                            {[...Array(20)].map((_, i) => (
+                                <div 
+                                    key={i}
+                                    className="absolute rounded-full blur-[2px]"
+                                    style={{
+                                        width: '4px',
+                                        height: '4px',
+                                        backgroundColor: colors.accentHex,
+                                        top: `${Math.random() * 100}%`,
+                                        left: `${Math.random() * 100}%`,
+                                        boxShadow: `0 0 10px ${colors.glow}`,
+                                        opacity: 0.4,
+                                        transform: `translate(${Math.sin(tick * 0.1 + i) * 50}px, ${Math.cos(tick * 0.08 + i) * 30}px)`,
+                                        transition: 'transform 1s linear'
+                                    }}
+                                />
+                            ))}
+                        </div>
+
+                        
+                    </div>
+
+                    <div className={`grid grid-cols-5 gap-px ${colors.muted}/40 border-b ${colors.border} relative z-10`}>{[ { key: 'rupa', label: AGGREGATE_LABELS.rupa }, { key: 'vedana', label: AGGREGATE_LABELS.vedana }, { key: 'sanna', label: AGGREGATE_LABELS.sanna }, { key: 'sankhara', label: AGGREGATE_LABELS.sankhara }, { key: 'vinnana', label: AGGREGATE_LABELS.vinnana } ].map((agg, i) => ( <div key={agg.key} className={`${colors.cardBg} p-3 space-y-2`}><div className={`flex justify-between text-[9px] uppercase tracking-tighter ${colors.muted} font-black`}><span>{getT(agg.label)}</span><span className={colors.accentText}>{(aggregates[i]).toFixed(1)}%</span></div><div className={`h-1 ${theme === 'matrix' ? 'bg-zinc-950' : 'bg-slate-900'} rounded-full overflow-hidden`}><div className={`h-full bg-${colors.accent}/80 transition-all duration-700 ease-out`} style={{ width: `${aggregates[i]}%` }}></div></div></div> ))}</div><div className="flex-grow relative flex flex-col items-center justify-center p-4 min-h-0 z-10"><div className="absolute inset-0 pointer-events-none opacity-[0.05]" style={{ backgroundImage: `linear-gradient(${colors.accentHex} 1px, transparent 1px), linear-gradient(90deg, ${colors.accentHex} 1px, transparent 1px)`, backgroundSize: '60px 60px' }}></div><div className={`absolute top-4 left-4 w-40 h-40 ${colors.bg}/60 rounded-3xl border ${colors.border} p-2 z-50`}><div className={`text-[8px] ${colors.muted} font-black uppercase text-center mb-1`}>{getT(UI_LABELS.aggregateBalance)}</div><ResponsiveContainer width="100%" height="85%"><RadarChart cx="50%" cy="50%" outerRadius="70%" data={radarData}><PolarGrid stroke={colors.gridColor} /><PolarAngleAxis dataKey="subject" tick={{ fill: theme === 'matrix' ? colors.accentHex : '#475569', fontSize: 6 }} /><Radar name="Aggregates" dataKey="A" stroke={colors.accentHex} fill={colors.accentHex} fillOpacity={0.4} /></RadarChart></ResponsiveContainer></div><div className={`absolute top-4 right-48 w-44 h-44 ${colors.bg}/80 rounded-3xl border ${colors.border} p-3 z-50 shadow-2xl backdrop-blur-md`}><div className={`text-[8px] ${colors.muted} font-black uppercase text-center mb-2`}>{getT(UI_LABELS.paticcasamuppada)}</div><div className="relative w-full h-32 flex items-center justify-center"><div className={`absolute w-24 h-24 border ${colors.border} rounded-full`}></div>{Object.keys(NIDANA_LABELS).map((key, i) => { const angle = (i * 30) - 90; const isActive = activeNidanas.has(i); return ( <div key={key} className={`absolute w-4 h-4 rounded-full border transition-all duration-500 ${isActive ? `bg-${colors.accent} border-${colors.accent} scale-150 shadow-lg shadow-${colors.glow}` : `bg-slate-900 border-slate-800`}`} style={{ transform: `rotate(${angle}deg) translateY(-40px) rotate(-${angle}deg)` }}></div> ); })}</div></div><div className={`absolute top-4 right-4 w-40 h-40 ${colors.bg}/60 rounded-3xl border ${colors.border} p-2 z-50`}><div className={`text-[8px] ${colors.muted} font-black uppercase text-center mb-1`}>{getT(UI_LABELS.typeMix)}</div><ResponsiveContainer width="100%" height="85%"><PieChart><Pie data={pieData} innerRadius={20} outerRadius={35} paddingAngle={5} dataKey="value">{pieData.map((entry, index) => ( <Cell key={`cell-${index}`} fill={[colors.accentHex, colors.secondaryHex, '#f59e0b', '#ef4444'][index % 4]} stroke="none" /> ))}</Pie></PieChart></ResponsiveContainer></div><div className="relative w-full max-w-5xl px-12"><div className="text-center mb-10"><div className={`text-${colors.accent}/40 text-[9px] font-black tracking-[0.6em] flex items-center justify-center gap-6`}><div className={`h-px flex-grow bg-gradient-to-r from-transparent to-${colors.accent}/20`}></div>{getT(UI_LABELS.streamTelemetry)}<div className={`h-px flex-grow bg-gradient-to-l from-transparent to-${colors.accent}/20`}></div></div></div><div className="flex items-center justify-center py-8"><div className="flex items-center"><div className="flex flex-row-reverse items-center gap-4">{timeline.slice(1, 6).map((cId, idx) => { const citta = cId ? CITTAS[cId] : null; return ( <div key={`hist-${idx}`} className="relative flex flex-col items-center opacity-40 scale-95 grayscale-[0.5]"><div className="w-20 h-24 rounded-2xl border bg-slate-900/30 border-slate-800/60 flex flex-col items-center justify-center"><div className={`text-[6px] text-${colors.accent}/40 font-black mb-1 uppercase truncate w-full px-1 text-center`}>{citta ? getT(CITTA_TYPE_LABELS[citta.type] || {en: citta.type, si: citta.type, ta: citta.type, hi: citta.type}) : '...'}</div><div className={`text-[9px] font-black text-center leading-tight px-1 uppercase tracking-tighter ${colors.muted}`}>{citta ? citta.pali : '...'}</div></div></div> ); })}</div><div className="mx-4 relative flex flex-col items-center z-10">{timeline[0] && CITTAS[timeline[0]!] ? ( <div key={`${tick}-active`} className="animate-citta-arise"><div className={`w-20 h-24 rounded-2xl border flex flex-col items-center justify-center bg-${colors.accent}/15 border-${colors.accent} scale-110 shadow-[0_0_40px_${colors.glow}]`}><div className={`text-[6px] text-${colors.accent}/60 font-black mb-1 uppercase truncate w-full px-1 text-center`}>{getT(CITTA_TYPE_LABELS[CITTAS[timeline[0]!].type] || {en: CITTAS[timeline[0]!].type, si: CITTAS[timeline[0]!].type, ta: CITTAS[timeline[0]!].type, hi: CITTAS[timeline[0]!].type})}</div><div className={`text-[9px] font-black text-center leading-tight px-1 uppercase tracking-tighter ${colors.text}`}>{CITTAS[timeline[0]!].pali}</div></div></div> ) : ( <div className="w-20 h-24 rounded-2xl border border-dashed border-slate-800 flex items-center justify-center"><span className="text-[8px] text-slate-700 font-bold uppercase">Ready</span></div> )}</div><div className="flex items-center gap-4">{[...Array(5)].map((_, i) => ( <div key={`spacer-${i}`} className="w-20 h-24 opacity-0 pointer-events-none hidden sm:block"></div> ))}</div></div></div></div><div className="absolute bottom-6 left-6 right-6 grid grid-cols-4 gap-4 z-40"><div className={`${colors.bg}/80 border ${colors.border} p-4 rounded-[1.5rem] backdrop-blur-xl`}><div className={`text-[9px] ${colors.muted} font-black uppercase mb-2`}>{getT(UI_LABELS.momentData)}</div><div className="space-y-1 text-[10px]"><div className="flex justify-between"><span className={`${colors.muted} uppercase`}>{getT(UI_LABELS.vedana)}:</span><span className={`text-${colors.secondary} uppercase font-bold`}>{getT(VEDANA_TYPE_LABELS[activeCittaMoment.vedana] || {en: activeCittaMoment.vedana, si: activeCittaMoment.vedana, ta: activeCittaMoment.vedana, hi: activeCittaMoment.vedana})}</span></div><div className="flex justify-between"><span className={`${colors.muted} uppercase`}>{getT(UI_LABELS.domain)}:</span><span className="text-amber-500 uppercase font-bold">{getT(CITTA_TYPE_LABELS[activeCittaMoment.type] || {en: activeCittaMoment.type, si: activeCittaMoment.type, ta: activeCittaMoment.type, hi: activeCittaMoment.type})}</span></div></div></div><div className={`${colors.bg}/80 border ${colors.border} p-4 rounded-[1.5rem] backdrop-blur-xl col-span-3 overflow-hidden`}><div className={`text-[9px] ${colors.muted} font-black uppercase mb-2`}>{getT(UI_LABELS.cetasikaLattice)}</div><div className="flex flex-wrap gap-1.5 max-h-[60px] overflow-y-auto custom-scrollbar">{activeCittaMoment.cetasikas.map(cId => ( <span key={cId} className={`px-2 py-1 bg-slate-900 border border-slate-800 text-[8px] ${colors.muted} rounded-lg font-black uppercase`}>{CETASIKAS[cId]?.pali || cId}</span> ))}</div></div></div></div><div className={`h-40 border-t ${colors.border} ${colors.bg}/90 flex flex-col font-mono shrink-0 relative z-20`}><div className={`px-4 py-2 bg-slate-900/50 border-b ${colors.border} flex justify-between items-center`}><span className={`text-[9px] font-black text-${colors.accent}/60 uppercase tracking-widest flex items-center gap-2`}><div className={`w-1.5 h-1.5 rounded-full bg-${colors.accent} animate-pulse`}></div>{getT(UI_LABELS.systemProcess)}</span><span className={`text-[8px] ${colors.muted} uppercase font-black tracking-tighter`}>{getT(UI_LABELS.realtimeTelemetry)}</span></div><div className="flex-grow overflow-y-auto custom-scrollbar p-3 space-y-1 text-[9px]">{systemLog.length > 0 ? systemLog.map(entry => ( <div key={entry.id} className="flex items-center gap-4 group animate-citta-arise"><span className={`${colors.muted} shrink-0`}>[{entry.timestamp}]</span><span className={`font-black tracking-widest shrink-0 ${entry.isKusala ? 'text-emerald-500' : 'text-rose-500'}`}>{entry.isKusala ? '>>>' : '!!!'}</span><span className={`${colors.text} font-bold uppercase shrink-0 w-24 truncate`}>{entry.cittaPali}</span><span className={`${colors.muted} shrink-0 uppercase`}>{getT(UI_LABELS.processedMoment)}:</span><span className={`${colors.accentText}/80 group-hover:${colors.accentText} uppercase tracking-tighter`}>{getT(UI_LABELS.phase)} {getT(CITTA_TYPE_LABELS[entry.type] || {en: entry.type, si: entry.type, ta: entry.type, hi: entry.type})}</span><div className={`flex-grow h-px ${colors.accent.split('-')[1]}-900 opacity-20`}></div></div> )) : ( <div className={`h-full flex items-center justify-center ${colors.muted} animate-pulse uppercase text-[10px] font-black tracking-widest`}>{getT(UI_LABELS.waiting)}</div> )}</div></div></main>
                     
                     <aside className={`w-80 border-l ${colors.border} flex flex-col ${colors.bg}/60 backdrop-blur-3xl z-40 shrink-0`}><div className="p-6 flex flex-col h-full gap-4 min-h-0"><div className="flex flex-col min-h-0 h-32"><div className={`text-[10px] ${colors.muted} font-black uppercase mb-3 tracking-widest text-center shrink-0`}>{getT(UI_LABELS.stabilityAnalysis)}</div><div className="flex-grow w-full overflow-hidden"><ResponsiveContainer width="100%" height="100%" debounce={100}><AreaChart data={stabilityHistory}><defs><linearGradient id={`stabilityGrad-${theme}`} x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor={colors.accentHex} stopOpacity={0.2}/><stop offset="95%" stopColor={colors.accentHex} stopOpacity={0}/></linearGradient></defs><CartesianGrid strokeDasharray="3 3" stroke={colors.gridColor} vertical={false} /><XAxis dataKey="time" hide /><YAxis hide domain={[0, 100]} /><Area type="monotone" dataKey="level" stroke={colors.accentHex} fillOpacity={1} fill={`url(#stabilityGrad-${theme})`} strokeWidth={2} isAnimationActive={false} /></AreaChart></ResponsiveContainer></div></div><div className="h-28 w-full bg-slate-950/40 rounded-xl border border-slate-700/50 p-2 relative overflow-hidden shrink-0 group"><div className={`text-[8px] ${colors.muted} font-black uppercase mb-2 tracking-[0.2em] text-center z-10 relative`}>{getT(UI_LABELS.cittaFlow)}</div><div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none"><svg width="100%" height="100%" className="opacity-80"><path d={`M 10 50 Q 50 ${40 + Math.sin(tick*0.1)*20}, 120 50 T 230 50`} fill="none" stroke={colors.accentHex} strokeWidth="0.5" strokeDasharray="4 4" className="transition-all duration-700" />{[...Array(8)].map((_, i) => { const offset = ((tick + i * 10) % 80) / 80; const pulse = 1 + Math.sin(tick * 0.2 + i) * 0.3; const x = 20 + (offset * 200); const y = 50 + Math.sin(offset * Math.PI * 2 + tick * 0.05) * 15; return ( <g key={i}><circle cx={x} cy={y} r={3 * pulse} fill={colors.accentHex} className="blur-[1px]" /><circle cx={x} cy={y} r={6 * pulse} fill="none" stroke={colors.accentHex} strokeWidth="0.5" className="animate-ping opacity-20" /></g> ); })}{[...Array(12)].map((_, i) => ( <rect key={`p-${i}`} x={((tick * (i + 2)) % 250)} y={20 + (i * 5) % 60} width="1" height="1" fill={colors.secondaryHex} className="opacity-30"><animate attributeName="opacity" values="0;0.5;0" dur={`${1 + Math.random()}s`} repeatCount="indefinite" /></rect> ))}</svg></div><div className={`absolute bottom-1 right-2 text-[6px] ${colors.muted} font-bold uppercase tracking-widest`}>REALTIME_FLUX_ACTIVE</div></div><div className="flex flex-col min-h-0 h-24 bg-slate-950/30 rounded-xl border border-slate-800/40 p-2"><div className={`text-[8px] ${colors.muted} font-black uppercase mb-2 tracking-widest text-center`}>{getT(UI_LABELS.intensityLabel)}</div><div className="flex-grow w-full"><ResponsiveContainer width="100%" height="100%"><BarChart data={intensityHistory}><Bar dataKey="value" isAnimationActive={false}>{intensityHistory.map((entry, index) => ( <Cell key={`cell-${index}`} fill={entry.value > 80 ? colors.accentHex : entry.value > 50 ? colors.secondaryHex : '#64748b'} opacity={0.6 + (index / intensityHistory.length) * 0.4} /> ))}</Bar></BarChart></ResponsiveContainer></div></div>
 
@@ -629,6 +746,12 @@ export const MasterDashboard: React.FC<MasterDashboardProps> = ({ language: init
                 .custom-scrollbar::-webkit-scrollbar { width: 4px; }
                 .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
                 .custom-scrollbar::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+                
+                @keyframes resonance-expand {
+                    0% { transform: scale(0.5); opacity: 0; }
+                    20% { opacity: 0.2; }
+                    100% { transform: scale(4); opacity: 0; }
+                }
             `}</style>
         </div>
     );
